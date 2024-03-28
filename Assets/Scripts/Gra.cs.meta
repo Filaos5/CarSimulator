@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 151eaf35d72245948b16fbb05edc58ad
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - prefabPostacGracza: {fileID: 2510115801660634551, guid: ab0bb049ee2874d45a6784d58a07afa4,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

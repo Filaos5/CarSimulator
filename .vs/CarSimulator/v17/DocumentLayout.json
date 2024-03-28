@@ -1,0 +1,167 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Projekt_CarSimulator\\CarSimulator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|f:\\projekt_carsimulator\\carsimulator\\assets\\scripts\\gra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|f:\\projekt_carsimulator\\carsimulator\\assets\\scripts\\postac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\postac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|F:\\Projekt_CarSimulator\\CarSimulator\\assets\\scripts\\samolotnpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\samolotnpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|F:\\Projekt_CarSimulator\\CarSimulator\\assets\\scripts\\jazda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jazda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|F:\\Projekt_CarSimulator\\CarSimulator\\assets\\scripts\\kamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\kamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|F:\\Projekt_CarSimulator\\CarSimulator\\assets\\scripts\\autonpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B42EA-F44A-38E9-2776-F6C8246FE230}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\autonpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Projekt_CarSimulator\\CarSimulator\\Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\Lit\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\Lit\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Projekt_CarSimulator\\CarSimulator\\Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\TerrainLit\\TerrainLit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\TerrainLit\\TerrainLit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Kula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Kula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Kamera.cs",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Kamera.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Kamera.cs",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Kamera.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Kamera.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T11:21:55.757Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Gra.cs",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Gra.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gra.cs",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Gra.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gra.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T13:18:52.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Postac.cs",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Postac.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Postac.cs",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Postac.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Postac.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAUwGsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T09:35:00.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SamolotNPC.cs",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\SamolotNPC.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SamolotNPC.cs",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\SamolotNPC.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SamolotNPC.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAgwIEAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T12:39:39.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AutoNPC.cs",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\AutoNPC.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AutoNPC.cs",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\AutoNPC.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AutoNPC.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAQwFwAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T12:42:05.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Kula.cs",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Kula.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Kula.cs",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Kula.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Kula.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T15:19:53.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Lit.shader",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\Lit\\Lit.shader",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\Lit\\Lit.shader",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\Lit\\Lit.shader",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\Lit\\Lit.shader",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2024-03-17T10:25:07.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TerrainLit.shader",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\TerrainLit\\TerrainLit.shader",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\TerrainLit\\TerrainLit.shader",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\TerrainLit\\TerrainLit.shader",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.high-definition@14.0.10\\Runtime\\Material\\TerrainLit\\TerrainLit.shader",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2024-03-16T13:10:26.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Jazda.cs",
+              "DocumentMoniker": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Jazda.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Jazda.cs",
+              "ToolTip": "F:\\Projekt_CarSimulator\\CarSimulator\\Assets\\Scripts\\Jazda.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Jazda.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAA7wGkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T11:05:44.632Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
