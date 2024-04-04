@@ -8,6 +8,8 @@ public class Kamera : MonoBehaviour
 {
     public GameObject postac_gracza;
     public Vector3 distance;
+    Vector3 pozycja_pojazdu;
+    Vector3 pozycja_postaci;
     public float lookUp;
     public Transform carplayertransform;
     public Rigidbody carplayertransform_p;
@@ -24,6 +26,10 @@ public class Kamera : MonoBehaviour
     public float rotationY;
     public string nazwa_samochodu;
     public string nazwa_gracza;
+    public string tagDocelowy = "Auto1"; // Tag obiektów, których odleg³oœæ chcemy sprawdziæ
+    public float odlegloscMax = 10f;
+    public string nazwa_aktualnego_pojazdu;
+    int wsiadanie;
     Vector3 myVector;
     public float time;
     // Start is called before the first frame update
@@ -31,16 +37,19 @@ public class Kamera : MonoBehaviour
     {
         QualitySettings.vSyncCount = 1;
         Application.targetFrameRate = 60;
-        GameObject targetObject = GameObject.Find(nazwa_gracza);
-        transform.position = targetObject.transform.position + myVector;
+        GameObject targetObject = Instantiate(postac_gracza, new Vector3(100f, 0f, -1350f), Quaternion.identity);
+        targetObject.name = "postac_gracza";
+        // GameObject targetObject = GameObject.Find("postac_gracza");
+        //transform.position = targetObject.transform.position + myVector;
         //transform.position = postac_gracza.transform.position + myVector;
-        transform.LookAt(postac_gracza.transform.position);
-        transform.Rotate(lookUp, 0, 1);
+        //transform.LookAt(targetObject.transform.position);
+        //transform.Rotate(lookUp, 0, 1);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 currentRotation = carplayertransform.rotation.eulerAngles;
         time += Time.deltaTime;
         //bool arrowKeysPressed = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow);
 
@@ -49,24 +58,54 @@ public class Kamera : MonoBehaviour
         //  {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (obiekt_rodzaj == 0 && time > 1)
+            GameObject[] obiektyZTagiem = GameObject.FindGameObjectsWithTag(tagDocelowy);
+            wsiadanie = 0;
+            // SprawdŸ odleg³oœæ miêdzy obiektem a innymi obiektami
+            foreach (GameObject obiekt in obiektyZTagiem)
+            {
+                float odleglosc = Vector3.Distance(transform.position, obiekt.transform.position);
+                if (odleglosc <= odlegloscMax)
+                {
+                    Debug.Log("Obiekt " + obiekt.name + " jest w zasiêgu. Odleg³oœæ: " + odleglosc);
+                    nazwa_aktualnego_pojazdu = obiekt.name;
+                    nazwa_samochodu= obiekt.name;
+                    wsiadanie = 1;
+                }
+                else
+                {
+                    Debug.Log("Obiekt " + obiekt.name + " jest poza zasiêgiem. Odleg³oœæ: " + odleglosc);
+                }
+            }
+
+            if (obiekt_rodzaj == 0 && time > 1 && wsiadanie==1)
             {
                 obiekt_rodzaj = 1;
                 time = 0;
+                wsiadanie = 0;
+                GameObject obiektDoZniszczenia = GameObject.Find("postac_gracza");
+                Destroy(obiektDoZniszczenia);
 
             }
             if (obiekt_rodzaj == 1 && time > 1)
             {
+                GameObject targetObject = Instantiate(postac_gracza, new Vector3(100f, 0f, -1350f), Quaternion.identity);
+                targetObject.name = "postac_gracza";
                 obiekt_rodzaj = 0;
                 time = 0;
+                currentRotation = carplayertransform.rotation.eulerAngles;
+                rotationY = currentRotation.y;
+                pozycja_postaci = pozycja_pojazdu + new Vector3(-(float)Math.Cos((rotationY) / (180 / Math.PI))*3, 0f, (float)Math.Sin((rotationY) / (180 / Math.PI))*3);
+                //transform.position = postac_gracza.transform.position + myVector;
+
+                targetObject.transform.position = pozycja_postaci;
+                transform.LookAt(targetObject.transform.position);
+                transform.Rotate(lookUp, 0, 1);
+               
+
+
             }
         }
         Cursor.lockState = CursorLockMode.None;
-        //     mouseX = 0;
-        //     mouseY = 0;
-        //}
-        //  else
-        //  {
         Vector3 mousePos = Input.mousePosition;
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
@@ -92,7 +131,6 @@ public class Kamera : MonoBehaviour
             zmianay = 4;
         }
         Vector3 currentVelocity = carplayertransform_p.velocity;
-        Vector3 currentRotation = carplayertransform.rotation.eulerAngles;
         rotationY = currentRotation.y;
         //if (currentVelocity.x == 0 && currentVelocity.z == 0)
         //{
@@ -159,17 +197,18 @@ public class Kamera : MonoBehaviour
             if (obiekt_rodzaj == 0)
             {
                 myVector = new Vector3((-3 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 2 + zmianay, (-3 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // pieszo
-                GameObject targetObject = GameObject.Find(nazwa_gracza);
-                transform.position = targetObject.transform.position + myVector;
+                GameObject targetObject0 = GameObject.Find("postac_gracza");
+                transform.position = targetObject0.transform.position + myVector;
                 //transform.position = postac_gracza.transform.position + myVector;
-                transform.LookAt(postac_gracza.transform.position);
+                transform.LookAt(targetObject0.transform.position);
                 transform.Rotate(lookUp, 0, 1);
             }
             if (obiekt_rodzaj == 1)
             {
-                GameObject targetObject = GameObject.Find(nazwa_samochodu);
-                transform.position = targetObject.transform.position + myVector;
-                transform.LookAt(targetObject.transform.position);
+                GameObject targetObject1 = GameObject.Find(nazwa_samochodu);
+                transform.position = targetObject1.transform.position + myVector;
+                pozycja_pojazdu = targetObject1.transform.position;
+                transform.LookAt(targetObject1.transform.position);
                 transform.Rotate(lookUp, 0, 1);
             }
     }

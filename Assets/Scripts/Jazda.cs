@@ -24,6 +24,7 @@ public class Jazda : MonoBehaviour
     public float VelocityY;
     public float VelocityZ;
     public float rotacjaZ;
+    float wspolczynnik_sily =1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
 
     private void CheckCollision()
@@ -100,7 +101,7 @@ public class Jazda : MonoBehaviour
         float Vdirection;
         Vector3 currentVelocity = rb.velocity;
         speed = (float)Math.Sqrt(currentVelocity.x*currentVelocity.x+currentVelocity.y *currentVelocity.y+currentVelocity.z*currentVelocity.z);
-        rb.AddForce(-currentVelocity.x/4, -currentVelocity.y/5, -currentVelocity.z/4);
+        rb.AddForce((-currentVelocity.x/4)* wspolczynnik_sily, (-currentVelocity.y/5) * wspolczynnik_sily, (-currentVelocity.z/4) * wspolczynnik_sily);
         if (stan==0)
         {
             Debug.Log("Brak kolizji z innym obiektem.");
@@ -110,7 +111,7 @@ public class Jazda : MonoBehaviour
             stan = 1;
         }
         Kamera kamera = FindObjectOfType<Kamera>();
-        if (1==1 && kamera.obiekt_rodzaj == 1)
+        if (1==1 && kamera.obiekt_rodzaj == 1  && kamera.nazwa_samochodu==this.name)
         {
             if (isRigidbody)// && (Hdirection = Input.GetAxis("Vertical")) != 0)
             {
@@ -118,10 +119,10 @@ public class Jazda : MonoBehaviour
                 rotacjaZ = currentRotation.z;
                 if (currentRotation.z > 270 || currentRotation.z < 90)
                 {
-                    rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 10, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 5, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 10);
+                    rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 10 * wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 5 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 10 * wspolczynnik_sily);
                     if (Input.GetKey(KeyCode.W))
                     {
-                        rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 17, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 12, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 17);
+                        rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 17 * wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 12 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 17 * wspolczynnik_sily);
                         x = (float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 150;
                         y = -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 150;
                         z = (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 150;
@@ -130,7 +131,7 @@ public class Jazda : MonoBehaviour
                     }
                     if (Input.GetKey(KeyCode.S))
                     {
-                        rb.AddForce(-((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 26), (float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 2, -((float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 26));
+                        rb.AddForce(-((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 26 * wspolczynnik_sily), (float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 2 * wspolczynnik_sily, -((float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 26 * wspolczynnik_sily));
                         x = -(float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 26;
                         y = (float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 26;
                         z = -(float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 26;
@@ -231,103 +232,7 @@ public class Jazda : MonoBehaviour
                 //if (kierunek >360f) { kierunek = kierunek - 360f; }
                 //Console.WriteLine(kierunek.ToString);
             }
-            /*
-            if (isRigidbody)// && (Hdirection = Input.GetAxis("Vertical")) != 0)
-            {
-                IncreaseSpeedXYZ(kierunek);
-                if (Input.GetKey(KeyCode.W))
-                {
-                    if (speed < 30)
-                    {
-                        speed = speed + (float)0.1;
-                    }
-                }
-                if (Input.GetKey(KeyCode.S))
-                {
-                    if (speed > -5)
-                    {
-                        speed = speed - (float)0.1;
-                    }
-                }
-                //rb.AddForce(Hdirection * Time.deltaTime * speed * kierunek * (float)Math.Sin((kierunek+0) / (180/Math.PI)), 0, Hdirection * Time.deltaTime * speed * kierunek * (float)Math.Cos((kierunek + 0) / (180 / Math.PI)));
-                //rb.AddForce(Hdirection * Time.deltaTime * speed * (float)Math.Sin(kierunek/(180/Math.PI)),0, Hdirection * Time.deltaTime * speed * (float)Math.Cos((kierunek) / (180 / Math.PI))) ;
-
-            }
-            else
-            {
-                if (speed > 0) speed = speed - (float)0.04;
-                if (speed < 0) speed = speed + (float)0.04;
-            }
-            if (isRigidbody) //&& (Vdirection = Input.GetAxis("Horizontal")) != 0)
-            {
-                //  rb.AddForce(Vdirection * Time.deltaTime * speed *0.2f * kierunek * (float)Math.Sin((kierunek + 180) / (180 / Math.PI)), 0, Vdirection * Time.deltaTime * speed * 0.2f * kierunek * (float)Math.Sin((kierunek + 90) / (180 / Math.PI)));
-
-                if (Input.GetKey(KeyCode.D))
-                {
-                    if (speed > 1 && speed <= 10)
-                    {
-                        //kierunek = kierunek - 0.5f;
-                        transform.Rotate(Vector3.up * 0.3f); // Zwiêkszenie rotacji w osi Y
-                    }
-                    //transform.Rotate(Vector3.right * 1); // Zwiêkszenie rotacji w osi X
-                    //transform.Rotate(Vector3.forward * 1); // Zwiêkszenie rotacji w osi Z
-                    if (speed > 10)
-                    {
-                        transform.Rotate(Vector3.up * 0.2f); // Zwiêkszenie rotacji w osi Y
-                    }
-                    if (speed > 0.3 && speed <= 1)
-                    {
-                        transform.Rotate(Vector3.up * 0.1f); // Zwiêkszenie rotacji w osi Y
-                    }
-                    if (speed < -1)
-                    {
-                        //kierunek = kierunek + 0.5f;
-                        transform.Rotate(Vector3.up * (-0.2f)); // Zwiêkszenie rotacji w osi Y
-                    }
-                    if (speed < -0.3 && speed >= -1)
-                    {
-                        transform.Rotate(Vector3.up * (-0.1f));
-                    }
-                }
-                if (Input.GetKey(KeyCode.A))
-                {
-                    if (speed > 1 && speed <= 10)
-                    {
-                        //kierunek = kierunek - 0.5f;
-                        transform.Rotate(Vector3.up * -0.3f); // Zwiêkszenie rotacji w osi Y
-                    }
-                    //transform.Rotate(Vector3.right * 1); // Zwiêkszenie rotacji w osi X
-                    //transform.Rotate(Vector3.forward * 1); // Zwiêkszenie rotacji w osi Z
-                    if (speed > 10)
-                    {
-                        transform.Rotate(Vector3.up * -0.2f); // Zwiêkszenie rotacji w osi Y
-                    }
-                    if (speed > 0.3 && speed <= 1)
-                    {
-                        transform.Rotate(Vector3.up * -0.1f); // Zwiêkszenie rotacji w osi Y
-                    }
-                    if (speed < -1)
-                    {
-                        //kierunek = kierunek + 0.5f;
-                        transform.Rotate(Vector3.up * (0.2f)); // Zwiêkszenie rotacji w osi Y
-                    }
-                    if (speed < -0.3 && speed >= -1)
-                    {
-                        transform.Rotate(Vector3.up * (0.1f));
-                    }
-
-                }
-
-                Vector3 currentRotation = transform.rotation.eulerAngles;
-                float rotationX = currentRotation.x;
-                float rotationY = currentRotation.y;
-                float rotationZ = currentRotation.z;
-                kierunek = rotationY;
-                //if (kierunek < 0f) { kierunek = kierunek + 360f; }
-                //if (kierunek >360f) { kierunek = kierunek - 360f; }
-                //Console.WriteLine(kierunek.ToString);
-            }
-            */
+      
         }
             
     }

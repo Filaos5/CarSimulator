@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Gra : MonoBehaviour
 {
-    public GameObject prefabPostacGracza;
+    public GameObject postac_gracza;
+    //public GameObject prefabPostacGracza;
     // Start is called before the first frame update
     void Awake()
     {
+        
         /*
         // Sprawdü, czy prefabrykat zosta≥ przypisany
         if (prefabPostacGracza != null)

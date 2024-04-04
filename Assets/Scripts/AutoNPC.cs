@@ -23,6 +23,7 @@ public class AutoNPC : MonoBehaviour
     public float kierunek_jazdy = 0f;
     public float kierunek = 0f;
     public float roznica;
+    float wspolczynnik_sily = 1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
     void Start()
     {
@@ -95,7 +96,7 @@ public class AutoNPC : MonoBehaviour
         CheckCollision();
         Vector3 currentPosition = transform.position;
         Vector3 currentVelocity = rb.velocity;
-        rb.AddForce(-currentVelocity.x / 4, -currentVelocity.y / 5, -currentVelocity.z / 4);
+        rb.AddForce((-currentVelocity.x / 4)* wspolczynnik_sily, (-currentVelocity.y / 5) * wspolczynnik_sily, (-currentVelocity.z / 4) * wspolczynnik_sily);
         VelocityX = currentVelocity.x;
         VelocityY = currentVelocity.y;
         VelocityZ = currentVelocity.z;
@@ -190,7 +191,7 @@ public class AutoNPC : MonoBehaviour
             if (stan == 1)
             {
 
-                rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 25, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 15, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 25);
+                rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 25* wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 15 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 25 * wspolczynnik_sily);
 
             }
         }
