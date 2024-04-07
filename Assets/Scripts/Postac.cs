@@ -8,53 +8,43 @@ using System;
 public class Postac : MonoBehaviour
 {
     public Animation animationComponent; // Komponent Animation na obiekcie
-    public AnimationClip defaultAnimationClip; // Domyœlna animacja
-    public AnimationClip alternateAnimationClip; // Alternatywna animacja
+   // public AnimationClip defaultAnimationClip; // Domyœlna animacja
+    //public AnimationClip alternateAnimationClip; // Alternatywna animacja
+    //public AnimationClip animacja1; // Pierwsza animacja
+    //public AnimationClip animacja2; // Druga animacja
     private bool isAlternateAnimationPlaying = false; // Flaga wskazuj¹ca, czy odtwarzana jest alternatywna animacja
+    private bool czyBiega = false;
+    private bool czyRuszasie = false;
     public string nazwa_kamery;
     public GameObject obiekt;
+    float nowa_rotacja = 0;
     //public GameObject kamera_gracza;
-
+    Animator animator;
     void Update()
     {
-        // SprawdŸ, czy naciœniêto przycisk
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Jeœli aktualnie odtwarzana jest domyœlna animacja, prze³¹cz na alternatywn¹
-            if (!isAlternateAnimationPlaying)
-            {
-                // Odtwórz alternatywn¹ animacjê
-                animationComponent.CrossFade(alternateAnimationClip.name);
-                isAlternateAnimationPlaying = true;
-            }
-            else // Jeœli aktualnie odtwarzana jest alternatywna animacja, prze³¹cz na domyœln¹
-            {
-                // Odtwórz domyœln¹ animacjê
-                animationComponent.CrossFade(defaultAnimationClip.name);
-                isAlternateAnimationPlaying = false;
-            }
-        }
+
+
+        transform.rotation = Quaternion.Euler(0, nowa_rotacja, 0);
     }
 
     void Start()
     {
-        GameObject postac = GameObject.Find("postac_gracza");
-        Rigidbody rb = postac.GetComponent<Rigidbody>();
         
-        // SprawdŸ, czy zosta³y przypisane animacje
-        if (animationComponent != null && defaultAnimationClip != null && alternateAnimationClip != null)
-        {
-            // Dodaj animacje do komponentu Animation
-            animationComponent.AddClip(defaultAnimationClip, defaultAnimationClip.name);
-            animationComponent.AddClip(alternateAnimationClip, alternateAnimationClip.name);
+        // Pobierz komponent Animator przypisany do tego obiektu
+        animator = GetComponent<Animator>();
 
-            // Ustaw domyœln¹ animacjê na odtwarzanie
-            animationComponent.Play(defaultAnimationClip.name);
+        // SprawdŸ, czy komponent Animator zosta³ znaleziony
+        if (animator == null)
+        {
+            Debug.LogError("Komponent Animator nie zosta³ znaleziony na tym obiekcie.");
         }
         else
         {
-            Debug.LogWarning("Nieprawid³owe przypisanie animacji.");
+            Debug.Log("Komponent Animator zosta³ znaleziony na tym obiekcie.");
         }
+        // SprawdŸ, czy komponent Animation jest przypisany
+        
+
     }
 
     private void FixedUpdate()
@@ -67,7 +57,7 @@ public class Postac : MonoBehaviour
         Rigidbody rb = postac.GetComponent<Rigidbody>();
         Vector3 currentPosition = postac.transform.position;
         float rotationY = kamera_gracza.transform.eulerAngles.y;
-        float nowa_rotacja = 0;
+        
         Kamera kamera = FindObjectOfType<Kamera>();
         if (kamera.obiekt_rodzaj == 0)
         {
@@ -105,14 +95,41 @@ public class Postac : MonoBehaviour
             {
                 nowa_rotacja = rotationY + 315;
             }
-            transform.rotation = Quaternion.Euler(0f, nowa_rotacja, 0f);
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            
+        
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                currentPosition.x = currentPosition.x + (float)Math.Sin((nowa_rotacja) / (180 / Math.PI)) * (float)0.08;
-                currentPosition.z = currentPosition.z + (float)Math.Cos((nowa_rotacja) / (180 / Math.PI)) * (float)0.08;
+                currentPosition.x = currentPosition.x + (float)Math.Sin((nowa_rotacja) / (180 / Math.PI)) * (float)0.04;
+                currentPosition.z = currentPosition.z + (float)Math.Cos((nowa_rotacja) / (180 / Math.PI)) * (float)0.04;
+                rb.position = currentPosition;
+                czyRuszasie = true;
+            }
+            else
+            {
+                // Ustawienie zmiennej bool na false, jeœli klawisz nie jest trzymany
+                czyRuszasie = false;
+            }
+
+            // Ustawienie zmiennej bool w komponencie Animator na podstawie zmiennej czyBiega
+            animator.SetBool("ruch", czyRuszasie);
+            if (Input.GetKey(KeyCode.Space))
+            {
+                // Ustawienie zmiennej bool na true, jeœli klawisz jest trzymany
+                czyBiega = true;
+                currentPosition.x = currentPosition.x + (float)Math.Sin((nowa_rotacja) / (180 / Math.PI)) * (float)0.11;
+                currentPosition.z = currentPosition.z + (float)Math.Cos((nowa_rotacja) / (180 / Math.PI)) * (float)0.11;
                 rb.position = currentPosition;
             }
+            else
+            {
+                // Ustawienie zmiennej bool na false, jeœli klawisz nie jest trzymany
+                czyBiega = false;
+            }
+
+            // Ustawienie zmiennej bool w komponencie Animator na podstawie zmiennej czyBiega
+            animator.SetBool("bieg", czyBiega);
         }
-      
+        transform.rotation = Quaternion.Euler(0, nowa_rotacja, 0);
+
     }
 }

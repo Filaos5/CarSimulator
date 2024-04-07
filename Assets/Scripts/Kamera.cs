@@ -11,8 +11,9 @@ public class Kamera : MonoBehaviour
     Vector3 pozycja_pojazdu;
     Vector3 pozycja_postaci;
     public float lookUp;
-    public Transform carplayertransform;
-    public Rigidbody carplayertransform_p;
+    //public Transform carplayertransform;
+    Transform car_aktualny_transform;
+    //public Rigidbody carplayertransform_p;
     public float pozycja_myszy_x = 0;
     float pozycja_myszy_y = 0;
     public float zmianax = 0;
@@ -31,6 +32,7 @@ public class Kamera : MonoBehaviour
     public string nazwa_aktualnego_pojazdu;
     int wsiadanie;
     Vector3 myVector;
+    Vector3 currentRotation;
     public float time;
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,7 @@ public class Kamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 currentRotation = carplayertransform.rotation.eulerAngles;
+        //Vector3 currentRotation = carplayertransform.rotation.eulerAngles;
         time += Time.deltaTime;
         //bool arrowKeysPressed = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow);
 
@@ -69,6 +71,7 @@ public class Kamera : MonoBehaviour
                     Debug.Log("Obiekt " + obiekt.name + " jest w zasiêgu. Odleg³oœæ: " + odleglosc);
                     nazwa_aktualnego_pojazdu = obiekt.name;
                     nazwa_samochodu= obiekt.name;
+                    car_aktualny_transform = obiekt.transform;
                     wsiadanie = 1;
                 }
                 else
@@ -92,7 +95,7 @@ public class Kamera : MonoBehaviour
                 targetObject.name = "postac_gracza";
                 obiekt_rodzaj = 0;
                 time = 0;
-                currentRotation = carplayertransform.rotation.eulerAngles;
+                currentRotation = car_aktualny_transform.rotation.eulerAngles;
                 rotationY = currentRotation.y;
                 pozycja_postaci = pozycja_pojazdu + new Vector3(-(float)Math.Cos((rotationY) / (180 / Math.PI))*3, 0f, (float)Math.Sin((rotationY) / (180 / Math.PI))*3);
                 //transform.position = postac_gracza.transform.position + myVector;
@@ -130,7 +133,7 @@ public class Kamera : MonoBehaviour
         {
             zmianay = 4;
         }
-        Vector3 currentVelocity = carplayertransform_p.velocity;
+        //Vector3 currentVelocity = carplayertransform_p.velocity;
         rotationY = currentRotation.y;
         //if (currentVelocity.x == 0 && currentVelocity.z == 0)
         //{
