@@ -1,0 +1,145 @@
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1713017372133669, "dur":15816, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1713017372149491, "dur":122, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1713017372149652, "dur":634, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1713017372150388, "dur":67, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/globalgamemanagers.assets.resS" }}
+,{ "pid":12345, "tid":0, "ts":1713017372150636, "dur":89, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":0, "ts":1713017372150840, "dur":108, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":0, "ts":1713017372151003, "dur":121, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/boot.config_tyr4.info" }}
+,{ "pid":12345, "tid":0, "ts":1713017372153643, "dur":207, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":0, "ts":1713017372153855, "dur":83, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":0, "ts":1713017372150317, "dur":4510, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1713017372154829, "dur":5871, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1713017372160700, "dur":158, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1713017372161013, "dur":38131, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1713017372150195, "dur":4639, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1713017372154835, "dur":1511, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1713017372156425, "dur":260, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1713017372156753, "dur":182, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1713017372156985, "dur":3711, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1713017372151406, "dur":3585, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1713017372154991, "dur":1364, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1713017372156355, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":2, "ts":1713017372156452, "dur":61, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1713017372156556, "dur":166, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1713017372156753, "dur":95, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1713017372156868, "dur":114, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1713017372156982, "dur":3716, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1713017372150291, "dur":4547, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1713017372154840, "dur":182, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1713017372155023, "dur":1327, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1713017372156353, "dur":333, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"GenerateNativePluginsForAssemblies Library/Bee/artifacts/WinPlayerBuildProgram/AsyncPluginsFromLinker" }}
+,{ "pid":12345, "tid":3, "ts":1713017372157019, "dur":164, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\WinPlayerBuildProgram\\AsyncPluginsFromLinker\\x86_64\\lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":3, "ts":1713017372157018, "dur":165, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Plugins/x86_64/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":3, "ts":1713017372157910, "dur":2768, "ph":"X", "name": "CopyFiles",  "args": { "detail":"F:/Budowane/CarSimulator/CarSimulator_Data/Plugins/x86_64/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":4, "ts":1713017372150412, "dur":4457, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1713017372154870, "dur":200, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1713017372155070, "dur":1287, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1713017372156360, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1713017372156496, "dur":76, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":4, "ts":1713017372156583, "dur":129, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/Unity.Burst.Unsafe.dll" }}
+,{ "pid":12345, "tid":4, "ts":1713017372156726, "dur":149, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1713017372156888, "dur":115, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1713017372157003, "dur":3700, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1713017372150555, "dur":4318, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1713017372154875, "dur":168, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1713017372155044, "dur":1318, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1713017372156372, "dur":52, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"H:\\Unity\\2022.3.18f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config" }}
+,{ "pid":12345, "tid":5, "ts":1713017372156364, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1713017372156434, "dur":50, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1713017372156522, "dur":164, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":5, "ts":1713017372156910, "dur":98, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1713017372157009, "dur":3705, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1713017372150657, "dur":4252, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1713017372154910, "dur":168, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1713017372155079, "dur":1279, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1713017372156371, "dur":53, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"H:\\Unity\\2022.3.18f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1713017372156359, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1713017372156436, "dur":56, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1713017372156541, "dur":61, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":6, "ts":1713017372156618, "dur":210, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/Unity.RenderPipelines.HighDefinition.Config.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1713017372156841, "dur":114, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1713017372156966, "dur":114, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/resources.assets" }}
+,{ "pid":12345, "tid":6, "ts":1713017372157080, "dur":3621, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1713017372150799, "dur":4114, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1713017372154915, "dur":172, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1713017372155087, "dur":1281, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1713017372156368, "dur":81, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1713017372156518, "dur":62, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":7, "ts":1713017372156756, "dur":100, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1713017372156916, "dur":132, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1713017372157049, "dur":3648, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1713017372150920, "dur":3998, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1713017372154920, "dur":174, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1713017372155095, "dur":1266, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1713017372156362, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1713017372156426, "dur":239, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1713017372156697, "dur":122, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1713017372156841, "dur":134, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1713017372156993, "dur":3706, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1713017372150963, "dur":3961, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1713017372154926, "dur":208, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1713017372155134, "dur":1220, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1713017372156358, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":9, "ts":1713017372156544, "dur":68, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":9, "ts":1713017372156623, "dur":160, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":9, "ts":1713017372156838, "dur":110, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1713017372156964, "dur":104, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":9, "ts":1713017372157068, "dur":3639, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1713017372151109, "dur":3820, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1713017372154967, "dur":1388, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1713017372156366, "dur":53, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"H:\\Unity\\2022.3.18f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config" }}
+,{ "pid":12345, "tid":10, "ts":1713017372156357, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":10, "ts":1713017372156469, "dur":79, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":10, "ts":1713017372156562, "dur":130, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":10, "ts":1713017372156800, "dur":189, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1713017372156989, "dur":3707, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1713017372151125, "dur":3809, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1713017372154935, "dur":1416, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1713017372156366, "dur":52, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"H:\\Unity\\2022.3.18f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":11, "ts":1713017372156353, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":11, "ts":1713017372156461, "dur":126, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":11, "ts":1713017372156713, "dur":154, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1713017372156888, "dur":109, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1713017372156998, "dur":3714, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1713017372151170, "dur":3770, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1713017372154940, "dur":1419, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1713017372156359, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1713017372156494, "dur":257, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":12, "ts":1713017372156809, "dur":206, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1713017372157015, "dur":3680, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1713017372151274, "dur":3672, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1713017372154947, "dur":1406, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1713017372156362, "dur":53, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"H:\\Unity\\2022.3.18f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
+,{ "pid":12345, "tid":13, "ts":1713017372156353, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":13, "ts":1713017372156493, "dur":64, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":13, "ts":1713017372156669, "dur":131, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1713017372156811, "dur":117, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1713017372156941, "dur":120, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":13, "ts":1713017372157061, "dur":3650, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1713017372151294, "dur":3657, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1713017372154952, "dur":1397, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1713017372156361, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1713017372156415, "dur":123, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":14, "ts":1713017372156586, "dur":189, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":14, "ts":1713017372156807, "dur":106, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.PropertiesModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1713017372156940, "dur":114, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":14, "ts":1713017372157054, "dur":3656, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1713017372151377, "dur":3609, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1713017372154986, "dur":1381, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1713017372156373, "dur":53, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"H:\\Unity\\2022.3.18f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config" }}
+,{ "pid":12345, "tid":15, "ts":1713017372156368, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":15, "ts":1713017372156552, "dur":85, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":15, "ts":1713017372156666, "dur":239, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1713017372156965, "dur":109, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/level1" }}
+,{ "pid":12345, "tid":15, "ts":1713017372157074, "dur":3632, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1713017372150371, "dur":4472, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1713017372154844, "dur":186, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1713017372155030, "dur":1335, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1713017372156365, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":16, "ts":1713017372156428, "dur":94, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":16, "ts":1713017372156708, "dur":176, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1713017372156967, "dur":118, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles F:/Budowane/CarSimulator/CarSimulator_Data/level0" }}
+,{ "pid":12345, "tid":16, "ts":1713017372157085, "dur":3616, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1713017372209049, "dur":2500, "ph":"X", "name": "ProfilerWriteOutput" }
+,

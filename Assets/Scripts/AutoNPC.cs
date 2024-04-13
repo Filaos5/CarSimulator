@@ -6,6 +6,7 @@ public class AutoNPC : MonoBehaviour
 {
     //private Rigidbody rb;
     // Start is called before the first frame update
+    public float speed = 0;
     public float meta_x;
     public float meta_z;
     public float cel_x;
@@ -45,46 +46,30 @@ public class AutoNPC : MonoBehaviour
 
 
     }
-    private void CheckCollision()
+    void OnTriggerEnter(Collider other)
     {
-        // Ustaw flagê na podstawie kolizji
-        if (isTouchingObject)
-        {
-            UpdateState();
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        // SprawdŸ, czy obiekt dotyka innego obiektu
-        isTouchingObject = true;
-        Debug.Log("Enter ");
+        // Obiekt wszed³ w obszar triggera innego obiektu
+        //kolidujeZInnymObiektem = true;
+        //Debug.Log("Zderzenie z innym obiektem: " + other.gameObject.name);
         stan = 1;
-        // Pobierz kierunek zderzenia
-        Vector3 collisionDirection = collision.contacts[0].normal;
-
-        // Pobierz kierunek przemieszczenia obiektu
-        Vector3 objectDirection = transform.forward;
     }
 
-    private void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider other)
     {
-        // SprawdŸ, czy obiekt przesta³ dotykaæ innego obiektu
-        isTouchingObject = false;
-        Debug.Log("Exit");
         stan = 0;
+        // Obiekt opuœci³ obszar triggera innego obiektu
+        //kolidujeZInnymObiektem = false;
+        //Debug.Log("Zakoñczenie zderzenia z innym obiektem: " + other.gameObject.name);
     }
-
-    private void UpdateState()
+    void OnTriggerStay(Collider other)
     {
-        // Ustaw stan na podstawie dotyku z innym obiektem
-        int state = isTouchingObject ? 1 : 0;
-
-        // Tutaj mo¿esz wykonaæ dodatkowe akcje w zale¿noœci od stanu, np. zmieniæ animacjê, itp.
-
-        // Wyœwietl informacjê w konsoli
-        Debug.Log("Stan: " + state);
+        stan = 1;
+        // Ustaw zmienn¹ na true, gdy obiekt nadal koliduje z innym obiektem
+        //kolidujeZInnymObiektem = true;
     }
+
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -93,14 +78,22 @@ public class AutoNPC : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        CheckCollision();
         Vector3 currentPosition = transform.position;
         Vector3 currentVelocity = rb.velocity;
         rb.AddForce((-currentVelocity.x / 4)* wspolczynnik_sily, (-currentVelocity.y / 5) * wspolczynnik_sily, (-currentVelocity.z / 4) * wspolczynnik_sily);
         VelocityX = currentVelocity.x;
         VelocityY = currentVelocity.y;
         VelocityZ = currentVelocity.z;
-        if(Math.Abs(currentPosition.x - meta_x) > Math.Abs(currentPosition.z - meta_z))
+        speed = (float)Math.Sqrt(currentVelocity.x * currentVelocity.x + currentVelocity.y * currentVelocity.y + currentVelocity.z * currentVelocity.z);
+        if (Math.Abs(speed) < 0.1)
+        {
+            wspolczynnik_sily = 10000;
+        }
+        else
+        {
+            wspolczynnik_sily = 1000;
+        }
+        if (Math.Abs(currentPosition.x - meta_x) > Math.Abs(currentPosition.z - meta_z))
         {
             cel_z = meta_z;
             if(currentPosition.x +100< meta_x)
@@ -162,19 +155,21 @@ public class AutoNPC : MonoBehaviour
         {
             roznica = roznica1;
         }
-        if (currentRotation.z > 270 || currentRotation.z < 90)
+        if (stan == 1)//(currentRotation.z > 270 || currentRotation.z < 90)
         {
             if (Mathf.Abs(roznica) > 180)
             {
-                Debug.Log("Jazda prawo ");
-                transform.Rotate(Vector3.up * (0.7f));
+                //Debug.Log("Jazda prawo ");
+                rb.AddForce(-((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily), 0, -((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily));
+                transform.Rotate(Vector3.up * (1f));
             }
             else
             {
-                Debug.Log("Jazda lewo ");
-                transform.Rotate(Vector3.up * (-0.7f));
+                //Debug.Log("Jazda lewo ");
+                rb.AddForce(-((float)Math.Sin((currentRotation.y + 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily), 0, -((float)Math.Cos((currentRotation.y + 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily));
+                transform.Rotate(Vector3.up * (-1f));
             }
-            if ((Math.Abs(currentPosition.x - meta_x) + Math.Abs(currentPosition.z - meta_z)) < 100)
+            if ((Math.Abs(currentPosition.x - meta_x) + Math.Abs(currentPosition.z - meta_z)) < 60)
             {
                 currentIndex = currentIndex + 1;
                 if (currentIndex < floatArray_X.Length)
@@ -191,8 +186,20 @@ public class AutoNPC : MonoBehaviour
             if (stan == 1)
             {
 
-                rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 25* wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 15 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 25 * wspolczynnik_sily);
+                rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 14 * wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 5 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 14 * wspolczynnik_sily);
 
+            }
+
+        }
+        else
+        {
+            if (Mathf.Abs(roznica) > 180)
+            {
+                rb.AddTorque(Vector3.right * wspolczynnik_sily * 8);
+            }
+            else
+            {
+                rb.AddTorque(Vector3.right * wspolczynnik_sily * -8);
             }
         }
     }
