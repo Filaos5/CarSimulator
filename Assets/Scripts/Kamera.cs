@@ -11,7 +11,7 @@ public class Kamera : MonoBehaviour
     Vector3 pozycja_pojazdu;
     Vector3 pozycja_postaci;
     public float lookUp;
-    //public Transform carplayertransform;
+    //Transform carplayertransform;
     Transform car_aktualny_transform;
     //public Rigidbody carplayertransform_p;
     public float pozycja_myszy_x = 0;
@@ -33,6 +33,7 @@ public class Kamera : MonoBehaviour
     int wsiadanie;
     Vector3 myVector;
     Vector3 currentRotation;
+    public float rotacja_auta = 0;
     public float time;
     // Start is called before the first frame update
     void Start()
@@ -134,7 +135,10 @@ public class Kamera : MonoBehaviour
             zmianay = 4;
         }
         //Vector3 currentVelocity = carplayertransform_p.velocity;
-        rotationY = currentRotation.y;
+       //GameObject obiekt_s = GameObject.Find(nazwa_aktualnego_pojazdu);
+        //rotationY = currentRotation.y;
+        //rotationY = obiekt_s.transform.rotation.y;
+        ///rotacja_auta = car_aktualny_transform.rotation.eulerAngles.y;
         //if (currentVelocity.x == 0 && currentVelocity.z == 0)
         //{
         if (obiekt_rodzaj > 0 && obiekt_rodzaj < 5)
@@ -212,6 +216,7 @@ public class Kamera : MonoBehaviour
                 transform.position = targetObject1.transform.position + myVector;
                 pozycja_pojazdu = targetObject1.transform.position;
                 transform.LookAt(targetObject1.transform.position);
+                rotationY = targetObject1.transform.rotation.eulerAngles.y;
                 transform.Rotate(lookUp, 0, 1);
             }
     }
