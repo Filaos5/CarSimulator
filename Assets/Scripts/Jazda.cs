@@ -16,6 +16,7 @@ public class Jazda : MonoBehaviour
     public int liczbaKolizji = 0;
     float przyspieszenie = 20;
     public float stan = 0;
+    public float obrot = 1;
     public float ilosc_k = 0;
     private bool collisionOccurred = false; // Flaga informuj¹ca o wyst¹pieniu kolizji
     private bool isTouchingSurface = false; // Flaga informuj¹ca o dotyku powierzchni
@@ -27,6 +28,7 @@ public class Jazda : MonoBehaviour
     public float VelocityZ;
     public float rotacjaZ;
     public float rotacjaX;
+    public float right = 0;
     float poprzedniaPozycjax;
     float poprzedniaPozycjay;
     float poprzedniaPozycjaz;
@@ -58,7 +60,15 @@ public class Jazda : MonoBehaviour
         // Ustaw zmienn¹ na true, gdy obiekt nadal koliduje z innym obiektem
         //kolidujeZInnymObiektem = true;
     }
- 
+    private void OnCollisionStay(Collision collision)
+    {
+        obrot = 8;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        obrot = 1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,6 +127,7 @@ public class Jazda : MonoBehaviour
             {
                 Vector3 currentRotation = transform.rotation.eulerAngles;
                 rotacjaZ = currentRotation.z+180;
+
                 if (rotacjaZ > 360)
                 {
                     rotacjaZ = rotacjaZ - 360;
@@ -145,12 +156,12 @@ public class Jazda : MonoBehaviour
                     {
                         if (przod_tyl == 0)
                         {
-                            rb.AddForce(-((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.6) * wspolczynnik_sily), 0, -((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.6) * wspolczynnik_sily));
+                            rb.AddForce(-((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily), 0, -((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily));
                             transform.Rotate(Vector3.up * 1f);
                         }
                         else
                         {
-                            rb.AddForce(((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.6) * wspolczynnik_sily), 0, ((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.6) * wspolczynnik_sily));
+                            rb.AddForce(((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily), 0, ((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily));
                             transform.Rotate(Vector3.up * (-1f));
                         }
 
@@ -175,18 +186,63 @@ public class Jazda : MonoBehaviour
                 }
                 else
                 {
+                    rotacjaX = currentRotation.x+180;
+                    if( rotacjaX >360 ){
+                        rotacjaX = rotacjaX - 360;
+                    }
                     if (Input.GetKey(KeyCode.D))
                     {
-                        rb.AddTorque(Vector3.right * wspolczynnik_sily * 7);
+                        if ((rotacjaX < 320) && (rotacjaX > 210) || (rotacjaX < 150) && (rotacjaX > 30))
+                        {
+                            rb.AddTorque(Vector3.forward * wspolczynnik_sily * -obrot);
+                            right = 0;
+                        }
+                        else
+                        {
+                            rb.AddTorque(Vector3.right * wspolczynnik_sily * obrot);
+                            right = 1;
+                        }
                         //rb.AddTorque(Vector3.)
                     }
                     if (Input.GetKey(KeyCode.A))
                     {
-
-                        rb.AddTorque(Vector3.right * wspolczynnik_sily * -7);
+                        if ((rotacjaX < 320) && (rotacjaX > 210) || (rotacjaX < 150) && (rotacjaX > 30))
+                        {
+                            rb.AddTorque(Vector3.forward * wspolczynnik_sily * obrot);
+                            right = 0;
+                        }
+                        else
+                        {
+                            rb.AddTorque(Vector3.right * wspolczynnik_sily * -obrot);
+                            right = 1;
+                        }
                     }
                 }
+                //if(speed<0.1 && currentRotation.x<-170 && currentRotation.x)
+                if (Input.GetKey(KeyCode.L))
+                {
+                    rb.AddTorque(Vector3.forward * wspolczynnik_sily * -obrot);
+                }
+                if (Input.GetKey(KeyCode.M))
+                {
+                    rb.AddTorque(Vector3.right * wspolczynnik_sily * -obrot);
+                }
+                if (Input.GetKey(KeyCode.P))
+                {
 
+                    // Obróæ obiekt o 180 stopni wokó³ osi X
+                    transform.Rotate(Vector3.right * 180f);
+
+                    // Obróæ obiekt o 180 stopni wokó³ osi Y
+                    transform.Rotate(Vector3.up * 180f);
+
+                    // Obróæ obiekt o 180 stopni wokó³ osi Z
+                    transform.Rotate(Vector3.forward * 175f);
+                }
+                if (Input.GetKey(KeyCode.J))
+                {
+                    transform.rotation = Quaternion.Euler(0f, currentRotation.y, 0f);
+                }
                 //Vector3 currentRotation = transform.rotation.eulerAngles;
                 float rotationX = currentRotation.x;
                 float rotationY = currentRotation.y;

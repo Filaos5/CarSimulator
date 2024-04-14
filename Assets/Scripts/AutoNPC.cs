@@ -13,6 +13,7 @@ public class AutoNPC : MonoBehaviour
     public float cel_z;
     float stan = 0;
     public Rigidbody rb;
+    float obrot = 1;
     private float[] floatArray_X = new float[5]; // Tablica float o d³ugoœci 5
     private float[] floatArray_Z = new float[5]; // Tablica float o d³ugoœci 5
     public int currentIndex = 0;
@@ -21,9 +22,12 @@ public class AutoNPC : MonoBehaviour
     public float VelocityZ;
     public float pozycjaX;
     public float pozycjaZ;
+    public float rotacjaZ;
+    public float rotacjaX;
     public float kierunek_jazdy = 0f;
     public float kierunek = 0f;
     public float roznica;
+
     float wspolczynnik_sily = 1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
     void Start()
@@ -68,8 +72,15 @@ public class AutoNPC : MonoBehaviour
         //kolidujeZInnymObiektem = true;
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        obrot = 8;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        obrot = 1;
+    }
 
-    
     // Update is called once per frame
     void Update()
     {
@@ -132,7 +143,19 @@ public class AutoNPC : MonoBehaviour
         kierunek_jazdy = Mathf.Rad2Deg * arcTanValue;
         Vector3 currentRotation = transform.rotation.eulerAngles;
         kierunek = currentRotation.y;
-
+        rotacjaX = currentRotation.x + 180;
+        if (rotacjaX > 360)
+        {
+            rotacjaX = rotacjaX - 360;
+        }
+        if (rotacjaX < 280 && rotacjaX > 260)
+        {
+            transform.rotation = Quaternion.Euler(0f, currentRotation.y, 0f);
+        }
+        if (rotacjaX < 100 && rotacjaX > 80)
+        {
+            transform.rotation = Quaternion.Euler(0f, currentRotation.y, 0f);
+        }
         //if (kierunek < kierunek_jazdy)
         // {
         //    kierunek = kierunek + 360f;
@@ -195,12 +218,13 @@ public class AutoNPC : MonoBehaviour
         {
             if (Mathf.Abs(roznica) > 180)
             {
-                rb.AddTorque(Vector3.right * wspolczynnik_sily * 8);
+                rb.AddTorque(Vector3.right * wspolczynnik_sily * obrot);
             }
             else
             {
-                rb.AddTorque(Vector3.right * wspolczynnik_sily * -8);
+                rb.AddTorque(Vector3.right * wspolczynnik_sily * -obrot);
             }
         }
+        
     }
 }
