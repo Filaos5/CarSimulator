@@ -41,17 +41,6 @@ public class Kolo : MonoBehaviour
         stan = 2;
         Debug.Log("Utrzymuje kontakt.");
 
-        // Pobierz kierunek zderzenia
-        //Vector3 collisionDirection = collision.contacts[0].normal;
-
-        // Pobierz kierunek przemieszczenia obiektu
-        //Vector3 objectDirection = transform.forward;
-
-        // Oblicz k¹t zderzenia miêdzy obiektami
-        //float collisionAngle = Vector3.Angle(collisionDirection, objectDirection);
-
-        // Wyœwietl wynik
-        //Debug.Log("K¹t zderzenia: " + collisionAngle + " stopni.");
     }
 
 
@@ -91,30 +80,7 @@ public class Kolo : MonoBehaviour
     {
         kierunekRuchuStopnie = Mathf.Atan2(transform.position.z - poprzedniaPozycjaz, transform.position.x - poprzedniaPozycjax) * Mathf.Rad2Deg;
         do_przodu_do_tylu = samochod.GetComponent<Jazda>().przod_tyl;
-        // Wyœwietl kierunek ruchu w konsoli
-        /*
-        Debug.Log("Kierunek ruchu obiektu w stopniach: " + kierunekRuchuStopnie);
-        poprzedniaPozycjax = transform.position.x;
-        poprzedniaPozycjay = transform.position.y;
-        poprzedniaPozycjaz = transform.position.z;
-        // SprawdŸ, czy obiekt zosta³ przypisany
-        if (obiektDoOdczytaniaRotacji != null)
-        {
-            // Odczytaj rotacjê obiektu
-            r = obiektDoOdczytaniaRotacji.rotation.eulerAngles.y;
-            rotacja = -r +90;
-            if (rotacja < -180)
-            {
-                rotacja = rotacja +360;
-            }
-            // Wyœwietl rotacjê w konsoli
-            Debug.Log("Rotacja obiektu: " + rotacja);
-        }
-        else
-        {
-            Debug.LogWarning("Nie przypisano obiektu do odczytania rotacji!");
-        }
-        */ 
+        // Wyœwietl kierunek ruchu w konsoli 
         //kierunek_a = obiektDoOdczytaniaRotacji.rotation.ToEulerAngles.
         // Wyœwietl kierunek ruchu w konsoli
         //Debug.Log("Kierunek ruchu obiektu w stopniach: " + kierunekRuchuStopnie);
@@ -135,19 +101,6 @@ public class Kolo : MonoBehaviour
         }
         poprzedniaPozycja = transform.position;
 
-        //czasPoprzedniejPozycji = Time.time;
-
-        // Wyœwietl prêdkoœæ w konsoli
-        //Debug.Log("Prêdkoœæ obiektu: " + predkosc + " jednostek na sekundê");
-        // Zwiêksz rotacjê obiektu o 1 stopieñ wokó³ osi Y w ka¿dej klatce
-        //p = 2;
-        //p = predkosc;
-        //transform.Rotate(Vector3.right * (odleglosc * 50));
-
-        // Przypisz now¹ rotacjê obiektu
-
-        //transform.Rotate(0f, predkosc, 0f);
-        //transform.localRotation *= Quaternion.Euler(0f, predkosc, 0f);
     }
 }
 

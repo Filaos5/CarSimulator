@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Auto1
+  - Helikopter
+  - Samolot1
+  - Samolot2
   layers:
   - Default
   - TransparentFX

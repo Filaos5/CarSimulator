@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2758.7698, g: 2832.6565, b: 4064.9927, a: 1}
+  m_IndirectSpecularColor: {r: 2750.5803, g: 2814.6487, b: 4013.4067, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -313,6 +313,172 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1962d8c779f1d104b8210c9848797903, type: 3}
+--- !u!1 &11000070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 11000071}
+  - component: {fileID: 11000076}
+  - component: {fileID: 11000075}
+  - component: {fileID: 11000074}
+  - component: {fileID: 11000073}
+  - component: {fileID: 11000072}
+  m_Layer: 0
+  m_Name: HelicopterV2
+  m_TagString: Helikopter
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &11000071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11000070}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 21.06, y: 5.3777227, z: 37.64}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 726742559}
+  m_Father: {fileID: 796714274}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &11000072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11000070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b138248f66ea9409ff08574c12159d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  rb: {fileID: 11000073}
+  kierunek: 0
+  kierunek_lotu: 0
+  liczbaKolizji: 0
+  stan: 0
+  obrot: 1
+  ilosc_k: 0
+  x: 0
+  y: 0
+  z: 0
+  VelocityX: 0
+  VelocityY: 0
+  VelocityZ: 0
+  rotacjaZ: 0
+  rotacjaX: 0
+  kierunekRuchuStopnie: 0
+  right: 0
+  przod_tyl: 0
+--- !u!54 &11000073
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11000070}
+  serializedVersion: 4
+  m_Mass: 3000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &11000074
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11000070}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2449682, y: 0.3104814, z: 0.23036093}
+  m_Center: {x: -0.10284254, y: 0.15509321, z: 0}
+--- !u!23 &11000075
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11000070}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -13878747981224875, guid: 2d478463c80ad524cb0cb1f582ea0731, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &11000076
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11000070}
+  m_Mesh: {fileID: 9077394016075933765, guid: 2d478463c80ad524cb0cb1f582ea0731, type: 3}
 --- !u!4 &15745725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6175571549931047187, guid: 1962d8c779f1d104b8210c9848797903,
@@ -19589,6 +19755,7 @@ GameObject:
   - component: {fileID: 665779549}
   - component: {fileID: 665779551}
   - component: {fileID: 665779550}
+  - component: {fileID: 665779552}
   m_Layer: 0
   m_Name: HelicopterV1_Rotor
   m_TagString: Untagged
@@ -19661,6 +19828,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665779548}
   m_Mesh: {fileID: -6150891888864105390, guid: 2d478463c80ad524cb0cb1f582ea0731, type: 3}
+--- !u!114 &665779552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665779548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f97e1624f70fef439f571f6d2a6c887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kamera: {fileID: 1823688464}
+  gameObject: {fileID: 665779548}
+  nazwa_helikoptera: 
 --- !u!1 &677959491
 GameObject:
   m_ObjectHideFlags: 0
@@ -20650,6 +20832,105 @@ Transform:
   - {fileID: 1093676484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &726742558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 726742559}
+  - component: {fileID: 726742562}
+  - component: {fileID: 726742561}
+  - component: {fileID: 726742560}
+  m_Layer: 0
+  m_Name: HelicopterV2_Rotor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &726742559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726742558}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.026, y: 0.21, z: -0.018}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 11000071}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &726742560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726742558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f97e1624f70fef439f571f6d2a6c887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kamera: {fileID: 1823688464}
+  gameObject: {fileID: 726742558}
+  nazwa_helikoptera: 
+--- !u!23 &726742561
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726742558}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -13878747981224875, guid: 2d478463c80ad524cb0cb1f582ea0731, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &726742562
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726742558}
+  m_Mesh: {fileID: -6150891888864105390, guid: 2d478463c80ad524cb0cb1f582ea0731, type: 3}
 --- !u!1 &727895797
 GameObject:
   m_ObjectHideFlags: 0
@@ -22461,6 +22742,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1692634094}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &796714273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796714274}
+  m_Layer: 0
+  m_Name: Helikoptery
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &796714274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796714273}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -407.56122, y: -4.837723, z: -3267.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1889656900}
+  - {fileID: 11000071}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &798087422
 GameObject:
   m_ObjectHideFlags: 0
@@ -38723,6 +39037,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1261458856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558631080}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2023847, y: 0.59999514, z: 3.149723}
+  m_Center: {x: 0.0000038146973, y: 0.39472127, z: -0.1386593}
 --- !u!1 &1264554933
 GameObject:
   m_ObjectHideFlags: 0
@@ -48348,7 +48683,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4bbb9a00864694d4d996576f3fa0fa78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -390.75067
+      value: -418.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bbb9a00864694d4d996576f3fa0fa78,
         type: 3}
@@ -48400,6 +48735,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ComPlaneV3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4bbb9a00864694d4d996576f3fa0fa78,
+        type: 3}
+      propertyPath: m_TagString
+      value: Samolot1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48408,6 +48748,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1261458853}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bbb9a00864694d4d996576f3fa0fa78,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1261458856}
   m_SourcePrefab: {fileID: 100100000, guid: 4bbb9a00864694d4d996576f3fa0fa78, type: 3}
 --- !u!4 &1626877928 stripped
 Transform:
@@ -53097,8 +53441,13 @@ MonoBehaviour:
   licznik_myszy: 0
   rotationY: 0
   nazwa_samochodu: carplayer
+  nazwa_helikoptera: HelicopterV1
+  nazwa_samolotu: 
   nazwa_gracza: postac_gracza
   tagDocelowy: Auto1
+  tagDocelowy_h: Helikopter
+  tagDocelowy_s1: Samolot1
+  tagDocelowy_s2: Samolot2
   odlegloscMax: 10
   nazwa_aktualnego_pojazdu: 
   rotacja_auta: 0
@@ -53769,7 +54118,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7185227ee4f2f164ebf4be5b8ad7d602, type: 2}
+  - {fileID: 2100000, guid: 4d1f7b5c6968a174aaad5a41826e913f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -54681,9 +55030,10 @@ GameObject:
   - component: {fileID: 1889656898}
   - component: {fileID: 1889656902}
   - component: {fileID: 1889656901}
+  - component: {fileID: 1889656903}
   m_Layer: 0
   m_Name: HelicopterV1
-  m_TagString: Untagged
+  m_TagString: Helikopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54746,14 +55096,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889656897}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -367.1166, y: 0.54, z: -3228.69}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 40.92, y: 5.3777227, z: 37.64}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 665779549}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 796714274}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!54 &1889656901
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54802,6 +55152,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2449682, y: 0.3104814, z: 0.23036093}
   m_Center: {x: -0.10284254, y: 0.15509321, z: 0}
+--- !u!114 &1889656903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889656897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b138248f66ea9409ff08574c12159d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  rb: {fileID: 1889656901}
+  kierunek: 0
+  kierunek_lotu: 0
+  liczbaKolizji: 0
+  stan: 0
+  obrot: 1
+  ilosc_k: 0
+  x: 0
+  y: 0
+  z: 0
+  VelocityX: 0
+  VelocityY: 0
+  VelocityZ: 0
+  rotacjaZ: 0
+  rotacjaX: 0
+  kierunekRuchuStopnie: 0
+  right: 0
+  przod_tyl: 0
 --- !u!1 &1896035946
 GameObject:
   m_ObjectHideFlags: 0
@@ -64855,7 +65236,6 @@ SceneRoots:
   - {fileID: 1978234377}
   - {fileID: 892000932}
   - {fileID: 186957163}
-  - {fileID: 1889656900}
   - {fileID: 81408220}
   - {fileID: 1320592368}
   - {fileID: 1832668764}
@@ -64867,3 +65247,4 @@ SceneRoots:
   - {fileID: 209053039}
   - {fileID: 726076328}
   - {fileID: 159155125}
+  - {fileID: 796714274}

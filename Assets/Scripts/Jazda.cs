@@ -156,12 +156,12 @@ public class Jazda : MonoBehaviour
                     {
                         if (przod_tyl == 0)
                         {
-                            rb.AddForce(-((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily), 0, -((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily));
+                            rb.AddForce(-((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily), 0, -((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily));
                             transform.Rotate(Vector3.up * 1f);
                         }
                         else
                         {
-                            rb.AddForce(((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily), 0, ((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.5) * wspolczynnik_sily));
+                            rb.AddForce(((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily), 0, ((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily));
                             transform.Rotate(Vector3.up * (-1f));
                         }
 
