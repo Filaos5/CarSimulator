@@ -9,8 +9,10 @@ public class Wirnik : MonoBehaviour
     public string nazwa_helikoptera;
     int rodzaj_pojazdu;
     //char l1;
-   // char l2;
-    
+    // char l2;
+    public AudioClip dzwiek; // DŸwiêk do odtworzenia
+    public float interwalOdtwarzania = 0.5f; // Interwa³ pomiêdzy kolejnymi odtworzeniami dŸwiêku
+    private bool warunek = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,14 @@ public class Wirnik : MonoBehaviour
         if (rodzaj_pojazdu == 2 && (this.name[11]== nazwa_helikoptera[11]))
         {
             transform.Rotate(0, 27, 0);
+            // SprawdŸ, czy dŸwiêk nie jest obecnie odtwarzany
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                // Odtwórz dŸwiêk
+                GetComponent<AudioSource>().clip = dzwiek;
+                GetComponent<AudioSource>().Play();
+                warunek = false; // Wy³¹cz warunek, aby unikn¹æ ponownego odtwarzania
+            }
         }
 
     }
