@@ -281,7 +281,7 @@ Material:
         a: 0.5764706}
     - Color_c9a840f2115c4802ba54d713194f761d: {r: 0.09601278, g: 0.7904862, b: 0.8207547,
         a: 0.9607843}
-    - Vector2_130994fa54a3486dacf33287c0070f7f: {r: 15, g: 15, b: 0, a: 0}
+    - Vector2_130994fa54a3486dacf33287c0070f7f: {r: 150, g: 150, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
