@@ -37,6 +37,9 @@ public class Jazda : MonoBehaviour
     public int przod_tyl=0; // 0 oznacza jazdê do przodu a 1 to ty³u
     float wspolczynnik_sily =1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
+    public AudioClip dzwiek; // DŸwiêk do odtworzenia
+    private bool warunek = false; // Warunek do sprawdzenia
+    private float glosnosc = 0.5f; // G³oœnoœæ dŸwiêku
 
     //public bool kolidujeZInnymObiektem = false;
     void OnTriggerEnter(Collider other)
@@ -125,6 +128,29 @@ public class Jazda : MonoBehaviour
         {
             if (isRigidbody)// && (Hdirection = Input.GetAxis("Vertical")) != 0)
             {
+                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+                {
+                    // SprawdŸ, czy dŸwiêk nie jest obecnie odtwarzany
+                    if (!GetComponent<AudioSource>().isPlaying)
+                    {
+                        // Odtwórz dŸwiêk z odpowiedni¹ g³oœnoœci¹
+                        GetComponent<AudioSource>().clip = dzwiek;
+                        GetComponent<AudioSource>().volume = 1.0f; // Ustaw g³oœnoœæ na 100%
+                        GetComponent<AudioSource>().Play();
+                        warunek = false; // Wy³¹cz warunek, aby unikn¹æ ponownego odtwarzania
+                    }
+                }
+                else
+                {
+                    // SprawdŸ, czy dŸwiêk nie jest obecnie odtwarzany
+                    if (!GetComponent<AudioSource>().isPlaying)
+                    {
+                        // Odtwórz dŸwiêk z odpowiedni¹ g³oœnoœci¹
+                        GetComponent<AudioSource>().clip = dzwiek;
+                        GetComponent<AudioSource>().volume = 0.6f; // Ustaw g³oœnoœæ na 50%
+                        GetComponent<AudioSource>().Play();
+                    }
+                }
                 Vector3 currentRotation = transform.rotation.eulerAngles;
                 rotacjaZ = currentRotation.z+180;
 
