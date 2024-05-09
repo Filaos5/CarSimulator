@@ -154,10 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationComponent: {fileID: 0}
-  defaultAnimationClip: {fileID: 0}
-  alternateAnimationClip: {fileID: 0}
-  animacja1: {fileID: 0}
-  animacja2: {fileID: 0}
   nazwa_kamery: 
   obiekt: {fileID: 0}
 --- !u!54 &5068239373887732390
@@ -194,7 +190,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610748686489414843}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e3534c437b854034aa142a547a1ffa57, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
