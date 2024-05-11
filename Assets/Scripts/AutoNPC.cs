@@ -27,6 +27,7 @@ public class AutoNPC : MonoBehaviour
     public float kierunek_jazdy = 0f;
     public float kierunek = 0f;
     public float roznica;
+    public int koniec=0;
 
     float wspolczynnik_sily = 1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
@@ -41,7 +42,7 @@ public class AutoNPC : MonoBehaviour
         floatArray_Z[1] = 830;
         floatArray_Z[2] = -260;
         floatArray_Z[3] = -260;
-        floatArray_Z[4] = -1350;
+        floatArray_Z[4] = -1400;
 
 
         // Zwiêksz pozycjê obiektu o 1 w osi x
@@ -200,13 +201,17 @@ public class AutoNPC : MonoBehaviour
                     meta_x = (float)floatArray_X[currentIndex];
                     meta_z = (float)floatArray_Z[currentIndex];
                 }
+                else
+                {
+                    koniec = 1;
+                }
             }
             //rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 10, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 5, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 10);
             if (rb.position.y < 0.2)
             {
                 stan = 1;
             }
-            if (stan == 1)
+            if (stan == 1 && koniec==0)
             {
 
                 rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 14 * wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 5 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 14 * wspolczynnik_sily);

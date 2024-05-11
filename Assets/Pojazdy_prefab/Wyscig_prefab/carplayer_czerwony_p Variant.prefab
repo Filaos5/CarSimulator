@@ -18,6 +18,11 @@ PrefabInstance:
       propertyPath: obiektDoOdczytaniaRotacji
       value: 
       objectReference: {fileID: 7018426592299908728}
+    - target: {fileID: 1014030629282878519, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4666548355946740645, guid: a4cd9543214af4c4db512b91e96db045,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -108,8 +113,7 @@ PrefabInstance:
       propertyPath: obiektDoOdczytaniaRotacji
       value: 
       objectReference: {fileID: 7018426592299908728}
-    m_RemovedComponents:
-    - {fileID: 1014030629282878519, guid: a4cd9543214af4c4db512b91e96db045, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
