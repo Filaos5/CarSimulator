@@ -113,6 +113,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1760549991831940656}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c94bfc760cc738e4ca3d321bdda6b9c0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5252731828783023414}
   m_SourcePrefab: {fileID: 100100000, guid: c94bfc760cc738e4ca3d321bdda6b9c0, type: 3}
 --- !u!1 &610748686489414843 stripped
 GameObject:
@@ -155,7 +159,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationComponent: {fileID: 0}
   nazwa_kamery: 
+  stan: 0
   obiekt: {fileID: 0}
+  nachylenie: 0
+  czyNaZiemi: 0
 --- !u!54 &5068239373887732390
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -182,7 +189,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1760549991831940656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -190,7 +197,28 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610748686489414843}
-  m_Material: {fileID: 13400000, guid: e3534c437b854034aa142a547a1ffa57, type: 2}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 1.9, z: 0.2}
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!136 &5252731828783023414
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610748686489414843}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -201,6 +229,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.7, y: 1.8, z: 0.5}
+  serializedVersion: 2
+  m_Radius: 0.35
+  m_Height: 1.8
+  m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}

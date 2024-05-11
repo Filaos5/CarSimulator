@@ -47,7 +47,8 @@ public class Kamera : MonoBehaviour
     {
         QualitySettings.vSyncCount = 1;
         Application.targetFrameRate = 60;
-        GameObject targetObject = Instantiate(postac_gracza, new Vector3(-350f, 0f, -3250f), Quaternion.identity);
+        GameObject targetObject = Instantiate(postac_gracza, new Vector3(100f, 0f, -1350f), Quaternion.identity);
+        //GameObject targetObject = Instantiate(postac_gracza, new Vector3(-350f, 0f, -3250f), Quaternion.identity);
         targetObject.name = "postac_gracza";
         // GameObject targetObject = GameObject.Find("postac_gracza");
         //transform.position = targetObject.transform.position + myVector;

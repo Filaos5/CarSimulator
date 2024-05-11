@@ -16,17 +16,58 @@ public class Postac : MonoBehaviour
     private bool czyBiega = false;
     private bool czyRuszasie = false;
     public string nazwa_kamery;
+    public float stan = 0;
     public GameObject obiekt;
     float nowa_rotacja = 0;
+    public float nachylenie;
+    public bool czyNaZiemi;
+    public float distanceToGround;
+    Vector3 pozycja_poprzdnia;
     //public GameObject kamera_gracza;
     Animator animator;
     void Update()
     {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit))
+        {
+            Vector3 terrainNormal = hit.normal;
+            nachylenie = Mathf.Acos(Vector3.Dot(terrainNormal, Vector3.up)) * Mathf.Rad2Deg;
+        }
+        if (Math.Abs(nachylenie) < 30)
+        {
+            transform.rotation = Quaternion.Euler(0, nowa_rotacja, 0);
+        }
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit))
+        {
+            distanceToGround = hit.distance;
+            Debug.Log("Odleg³oœæ do pod³o¿a: " + distanceToGround);
+        }
 
-
-        transform.rotation = Quaternion.Euler(0, nowa_rotacja, 0);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        // Obiekt wszed³ w obszar triggera innego obiektu
+        //kolidujeZInnymObiektem = true;
+        //Debug.Log("Zderzenie z innym obiektem: " + other.gameObject.name);
+        stan = 1;
+        //GameObject postac = GameObject.Find("postac_gracza");
+        //Rigidbody rb = postac.GetComponent<Rigidbody>();
+        //rb.velocity = Vector3.zero;
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        stan = 0;
+        // Obiekt opuœci³ obszar triggera innego obiektu
+        //kolidujeZInnymObiektem = false;
+        //Debug.Log("Zakoñczenie zderzenia z innym obiektem: " + other.gameObject.name);
+    }
+    void OnTriggerStay(Collider other)
+    {
+        stan = 1;
+        // Ustaw zmienn¹ na true, gdy obiekt nadal koliduje z innym obiektem
+        //kolidujeZInnymObiektem = true;
+    }
     void Start()
     {
         
@@ -43,7 +84,10 @@ public class Postac : MonoBehaviour
             Debug.Log("Komponent Animator zosta³ znaleziony na tym obiekcie.");
         }
         // SprawdŸ, czy komponent Animation jest przypisany
-        
+        GameObject postac = GameObject.Find("postac_gracza");
+        Rigidbody rb = postac.GetComponent<Rigidbody>();
+        Vector3 currentPosition = postac.transform.position;
+        pozycja_poprzdnia = currentPosition;
 
     }
 
@@ -53,6 +97,7 @@ public class Postac : MonoBehaviour
         //kamera_gracza.transform.parent = transform;
         //Rotate rotateComponent = kamera_gracza.GetComponent<Rotate>();
         //rotateComponent.
+        czyNaZiemi = Physics.Raycast(transform.position, -Vector3.up, 0.1f);
         GameObject postac = GameObject.Find("postac_gracza");
         Rigidbody rb = postac.GetComponent<Rigidbody>();
         Vector3 currentPosition = postac.transform.position;
@@ -95,29 +140,35 @@ public class Postac : MonoBehaviour
             {
                 nowa_rotacja = rotationY + 315;
             }
-            
-        
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                currentPosition.x = currentPosition.x + (float)Math.Sin((nowa_rotacja) / (180 / Math.PI)) * (float)0.04;
-                currentPosition.z = currentPosition.z + (float)Math.Cos((nowa_rotacja) / (180 / Math.PI)) * (float)0.04;
+                if (distanceToGround < 0.5)
+                {
+                    currentPosition.x = currentPosition.x + (float)Math.Sin((nowa_rotacja) / (180 / Math.PI)) * (float)0.04;
+                    currentPosition.z = currentPosition.z + (float)Math.Cos((nowa_rotacja) / (180 / Math.PI)) * (float)0.04;
+                }
                 rb.position = currentPosition;
+                pozycja_poprzdnia = currentPosition;
                 czyRuszasie = true;
             }
             else
             {
                 // Ustawienie zmiennej bool na false, jeœli klawisz nie jest trzymany
                 czyRuszasie = false;
+                rb.position = pozycja_poprzdnia;
             }
 
             // Ustawienie zmiennej bool w komponencie Animator na podstawie zmiennej czyBiega
             animator.SetBool("ruch", czyRuszasie);
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) && czyRuszasie == true)
             {
                 // Ustawienie zmiennej bool na true, jeœli klawisz jest trzymany
                 czyBiega = true;
-                currentPosition.x = currentPosition.x + (float)Math.Sin((nowa_rotacja) / (180 / Math.PI)) * (float)0.11;
-                currentPosition.z = currentPosition.z + (float)Math.Cos((nowa_rotacja) / (180 / Math.PI)) * (float)0.11;
+                if (distanceToGround<0.5)
+                {
+                    currentPosition.x = currentPosition.x + (float)Math.Sin((nowa_rotacja) / (180 / Math.PI)) * (float)0.11;
+                    currentPosition.z = currentPosition.z + (float)Math.Cos((nowa_rotacja) / (180 / Math.PI)) * (float)0.11;
+                }
                 rb.position = currentPosition;
             }
             else
@@ -128,6 +179,11 @@ public class Postac : MonoBehaviour
 
             // Ustawienie zmiennej bool w komponencie Animator na podstawie zmiennej czyBiega
             animator.SetBool("bieg", czyBiega);
+
+            if (stan == 0)
+            {
+                pozycja_poprzdnia = currentPosition;
+            }
         }
         transform.rotation = Quaternion.Euler(0, nowa_rotacja, 0);
 

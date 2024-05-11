@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &397126919983273232
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 286294143486454150, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: samochod
+      value: 
+      objectReference: {fileID: 7650953175695926466}
+    - target: {fileID: 286294143486454150, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: obiektDoOdczytaniaRotacji
+      value: 
+      objectReference: {fileID: 7018426592299908728}
+    - target: {fileID: 4666548355946740645, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4c2ee3e832cffd48bb9d156c2b21376, type: 2}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 360.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.547382
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 745.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742247323733973461, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: samochod
+      value: 
+      objectReference: {fileID: 7650953175695926466}
+    - target: {fileID: 7742247323733973461, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: obiektDoOdczytaniaRotacji
+      value: 
+      objectReference: {fileID: 7018426592299908728}
+    - target: {fileID: 8047727698847052242, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: m_Name
+      value: carplayer_czerwony_p Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337008948117067393, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: samochod
+      value: 
+      objectReference: {fileID: 7650953175695926466}
+    - target: {fileID: 8337008948117067393, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: obiektDoOdczytaniaRotacji
+      value: 
+      objectReference: {fileID: 7018426592299908728}
+    - target: {fileID: 9001023923766841983, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: samochod
+      value: 
+      objectReference: {fileID: 7650953175695926466}
+    - target: {fileID: 9001023923766841983, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      propertyPath: obiektDoOdczytaniaRotacji
+      value: 
+      objectReference: {fileID: 7018426592299908728}
+    m_RemovedComponents:
+    - {fileID: 1014030629282878519, guid: a4cd9543214af4c4db512b91e96db045, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8047727698847052242, guid: a4cd9543214af4c4db512b91e96db045,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7746452483053390184}
+  m_SourcePrefab: {fileID: 100100000, guid: a4cd9543214af4c4db512b91e96db045, type: 3}
+--- !u!54 &3448816240654606288 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3052957643842374336, guid: a4cd9543214af4c4db512b91e96db045,
+    type: 3}
+  m_PrefabInstance: {fileID: 397126919983273232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7018426592299908728 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
+    type: 3}
+  m_PrefabInstance: {fileID: 397126919983273232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7650953175695926466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8047727698847052242, guid: a4cd9543214af4c4db512b91e96db045,
+    type: 3}
+  m_PrefabInstance: {fileID: 397126919983273232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7746452483053390184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7650953175695926466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 489a205b4e2e2c544aedbd11071ce217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  meta_x: 0
+  meta_z: 0
+  cel_x: 0
+  cel_z: 0
+  rb: {fileID: 3448816240654606288}
+  currentIndex: 0
+  VelocityX: 0
+  VelocityY: 0
+  VelocityZ: 0
+  pozycjaX: 0
+  pozycjaZ: 0
+  rotacjaZ: 0
+  rotacjaX: 0
+  kierunek_jazdy: 0
+  kierunek: 0
+  roznica: 0
