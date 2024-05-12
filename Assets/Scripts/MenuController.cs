@@ -30,7 +30,7 @@ public class MenuController : MonoBehaviour
         //Invoke("UsunScene", 3f);
         Cursor.visible = false;
         Time.timeScale = 1f;
-        //UIMiniMapa.SetActive(true);
+        
     }
 
     public void Exit()

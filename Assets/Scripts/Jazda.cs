@@ -249,7 +249,7 @@ public class Jazda : MonoBehaviour
                 {
                     rb.AddTorque(Vector3.forward * wspolczynnik_sily * -obrot);
                 }
-                if (Input.GetKey(KeyCode.M))
+                if (Input.GetKey(KeyCode.O))
                 {
                     rb.AddTorque(Vector3.right * wspolczynnik_sily * -obrot);
                 }
