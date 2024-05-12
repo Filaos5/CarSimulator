@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,28 +18,67 @@ public class Wyscig : MonoBehaviour
     public GameObject objectstrzalka;
     public GameObject objectcylinder;
     public string nazwa_samochodu;
+    GameObject sam1;
+    GameObject sam2;
+    GameObject sam3;
+    public TextMeshProUGUI textMeshPro;
+    private float czasRozpoczecia;
+    private float czasPrzejazdu;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Auto1"))
+        GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
+        Kamera kamera = mainCameraObject.GetComponent<Kamera>();
+        nazwa_samochodu = kamera.nazwa_samochodu;
+        if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0)
         {
             dotykaCar = true;
+            textMeshPro.gameObject.SetActive(true);
+            textMeshPro.text = "Aby rozpocz¹æ wyœcig wciœnij E";
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Auto1"))
+        if (other.gameObject.name == nazwa_samochodu)
         {
             dotykaCar = false;
+            textMeshPro.gameObject.SetActive(false);
         }
     }
     void Start()
     {
         objectstrzalka.SetActive(false);
         objectcylinder.SetActive(false);
+        textMeshPro.gameObject.SetActive(false);
+    }
+    IEnumerator odliczanie()
+    {
+        Time.timeScale = 0f;
+        // Oczekiwanie przez 3 sekundy
+        textMeshPro.gameObject.SetActive(true);
+        // Wpisz tekst "jestem" do TextMeshPro
+        textMeshPro.text = "3";
+        yield return new WaitForSecondsRealtime(1f);
+        textMeshPro.text = "2";
+        yield return new WaitForSecondsRealtime(1f);
+        textMeshPro.text = "1";
+        yield return new WaitForSecondsRealtime(1f);
+        textMeshPro.text = "START!";
+        Time.timeScale = 1f;
+        czasRozpoczecia = Time.time;
+        yield return new WaitForSecondsRealtime(1f);
+        textMeshPro.gameObject.SetActive(false);
     }
 
+    IEnumerator meta()
+    {
+        textMeshPro.gameObject.SetActive(true);
+        // Wpisz tekst "jestem" do TextMeshPro
+        textMeshPro.text = "Twój czas" + czasPrzejazdu + " s";
+        yield return new WaitForSecondsRealtime(3f);
+        textMeshPro.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -52,9 +92,12 @@ public class Wyscig : MonoBehaviour
             GameObject obj = GameObject.Find(nazwa_samochodu);
             // Ustaw rotacjê obiektu na 0
             obj.transform.rotation = Quaternion.identity;
-            Instantiate(samochod1, new Vector3(120f, 0f, -1350f), Quaternion.identity);
-            Instantiate(samochod2, new Vector3(130f, 0f, -1360f), Quaternion.identity);
-            Instantiate(samochod3, new Vector3(110f, 0f, -1370f), Quaternion.identity);
+            sam1 = Instantiate(samochod1, new Vector3(120f, 0f, -1350f), Quaternion.identity);
+            sam2 = Instantiate(samochod2, new Vector3(130f, 0f, -1360f), Quaternion.identity);
+            sam3 = Instantiate(samochod3, new Vector3(110f, 0f, -1370f), Quaternion.identity);
+            Rigidbody rb = obj.GetComponent<Rigidbody>();
+            rb.velocity = Vector3.zero;
+            StartCoroutine(odliczanie());
             objectpole.SetActive(false);
             objectstrzalka.SetActive(true);
             objectcylinder.SetActive(true);
@@ -104,18 +147,19 @@ public class Wyscig : MonoBehaviour
             objectstrzalka.SetActive(false);
             objectpole.SetActive(true);
             stan_wyscig = 5;
-            dotykaCar = false;
+            dotykaCar = false; 
         }
         if (dotykaCar == true && stan_wyscig == 5)
         {   
             //GameObject obiektDoZniszczenia = GameObject.Find(samochod1);
             //Destroy(obiektDoZniszczenia);
-            //Destroy(samochod1);
-            //Destroy(samochod2);
-            //Destroy(samochod3);
+            Destroy(sam1);
+            Destroy(sam2);
+            Destroy(sam3);
             objectpole.SetActive(false);
             objectcylinder.SetActive(false);
-
+            czasPrzejazdu = Time.time - czasRozpoczecia;
+            StartCoroutine(meta());
         }
         
     }
