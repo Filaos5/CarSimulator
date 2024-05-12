@@ -8,6 +8,7 @@ TagManager:
   - Helikopter
   - Samolot1
   - Samolot2
+  - Camera_mapa
   layers:
   - Default
   - TransparentFX

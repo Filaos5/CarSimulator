@@ -28648,7 +28648,7 @@ GameObject:
   - component: {fileID: 808396001}
   m_Layer: 0
   m_Name: Camera_mapa
-  m_TagString: MainCamera
+  m_TagString: Camera_mapa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28893,6 +28893,8 @@ MonoBehaviour:
   objectToMove: {fileID: 808395994}
   windowWidth: 0
   windowHeight: 0
+  mouse_x: 0
+  mouse_y: 0
 --- !u!1 &810438644
 GameObject:
   m_ObjectHideFlags: 0
