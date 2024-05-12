@@ -32,9 +32,12 @@ public class Wyscig : MonoBehaviour
         nazwa_samochodu = kamera.nazwa_samochodu;
         if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0)
         {
-            dotykaCar = true;
             textMeshPro.gameObject.SetActive(true);
             textMeshPro.text = "Aby rozpocz¹æ wyœcig wciœnij E";
+        }
+        if (other.gameObject.name == nazwa_samochodu)
+        {
+            dotykaCar = true;
         }
     }
 
@@ -55,9 +58,7 @@ public class Wyscig : MonoBehaviour
     IEnumerator odliczanie()
     {
         Time.timeScale = 0f;
-        // Oczekiwanie przez 3 sekundy
         textMeshPro.gameObject.SetActive(true);
-        // Wpisz tekst "jestem" do TextMeshPro
         textMeshPro.text = "3";
         yield return new WaitForSecondsRealtime(1f);
         textMeshPro.text = "2";
@@ -67,7 +68,7 @@ public class Wyscig : MonoBehaviour
         textMeshPro.text = "START!";
         Time.timeScale = 1f;
         czasRozpoczecia = Time.time;
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(3f);
         textMeshPro.gameObject.SetActive(false);
     }
 
@@ -160,6 +161,7 @@ public class Wyscig : MonoBehaviour
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
             StartCoroutine(meta());
+            stan_wyscig = 0;
         }
         
     }
