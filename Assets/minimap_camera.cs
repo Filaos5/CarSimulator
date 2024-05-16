@@ -29,7 +29,7 @@ public class minimap_camera : MonoBehaviour
     }
     private void SetRotation()
     {
-        transform.rotation = Quaternion.Euler(90.0f, MainCamera.transform.eulerAngles.y, 0.0f);
+       transform.rotation = Quaternion.Euler(90.0f, MainCamera.transform.eulerAngles.y, 0.0f);
     }
     private void SetPosition()
     {
