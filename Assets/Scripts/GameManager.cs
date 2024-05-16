@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Camera mainCamera; // Przypisz kamerê "mania camera" w edytorze Unity
     public Camera kameraMapa;
     public int mapa;
+    public int mapa_p;
     void Awake()
     {
 
@@ -25,26 +26,67 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        PlayerPrefs.SetInt("mapa", 0);
+        if (Time.timeScale == 0f)
+        {
+            // Wy³¹cz kamerê "mania camera"
+            mainCamera.enabled = false;
 
+            // W³¹cz kamerê "kamera_mapa"
+            kameraMapa.enabled = true;
+            UIMiniMapa.SetActive(false);
+        }
     }
     // Wy³¹cz rzucanie cieni dla wszystkich innych œwiate³ kierunkowych
     IEnumerator mapa_k()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(1f);
         mapa = 1;
     }
     IEnumerator mapa_w()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(1f);
         mapa = 0;
     }
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeScale == 1f && menu==1)
+        /*
+        mapa_p = PlayerPrefs.GetInt("mapa");
+        if (mapa_p == 1 && menu==0)
+        {
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+            kameraMapa.enabled = true;
+            mainCamera.enabled = false;
+        }
+        if (mapa_p == 0 && menu == 0)
+        {
+            Time.timeScale = 1f;
+            Cursor.visible = false;
+            kameraMapa.enabled = false;
+            mainCamera.enabled = true;
+        }
+        */
+        if(Time.timeScale == 0.02f)
+        {
+            mainCamera.enabled = true;
+            kameraMapa.enabled = false;
+            UIMiniMapa.SetActive(true);
+            Time.timeScale = 1f;
+            mapa_p = 0;
+        }
+        if(Time.timeScale == 0.1f && menu==1)
         {
             UIMiniMapa.SetActive(true);
             menu = 0;
+        }
+        if (Time.timeScale == 0.1f)
+        {
+            UIMiniMapa.SetActive(false);
+            Time.timeScale = 0f;
+            mainCamera.enabled = false;
+            kameraMapa.enabled = true;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -69,10 +111,11 @@ public class GameManager : MonoBehaviour
         {
             // Wy³¹cz kamerê "mania camera"
             mainCamera.enabled = false;
-
+            PlayerPrefs.SetInt("mapa", 0);
             // W³¹cz kamerê "kamera_mapa"
             kameraMapa.enabled = true;
             Time.timeScale = 0f;
+            mapa_p = 1;
             UIMiniMapa.SetActive(false);
             StartCoroutine(mapa_k());
 
@@ -81,10 +124,11 @@ public class GameManager : MonoBehaviour
         {
             // Wy³¹cz kamerê "mania camera"
             mainCamera.enabled = true;
-
+            PlayerPrefs.SetInt("mapa", 1);
             // W³¹cz kamerê "kamera_mapa"
             kameraMapa.enabled = false;
             Time.timeScale = 1f;
+            mapa_p = 0;
             UIMiniMapa.SetActive(true);
             StartCoroutine(mapa_w());
         }
