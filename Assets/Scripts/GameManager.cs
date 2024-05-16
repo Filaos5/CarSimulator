@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     int menu;
     public Camera mainCamera; // Przypisz kamerê "mania camera" w edytorze Unity
     public Camera kameraMapa;
+    public int numer_wyscigu;
     public int mapa;
     public int mapa_p;
     void Awake()

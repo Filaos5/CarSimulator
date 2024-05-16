@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class AutoNPC : MonoBehaviour
+public class Auto_ruch_uliczny : MonoBehaviour
 {
     //private Rigidbody rb;
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class AutoNPC : MonoBehaviour
     public float kierunek_jazdy = 0f;
     public float kierunek = 0f;
     public float roznica;
-    public int koniec=0;
+    public int koniec = 0;
     public float pas = 5;
     float wspolczynnik_sily = 1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
@@ -189,7 +189,7 @@ public class AutoNPC : MonoBehaviour
     {
         Vector3 currentPosition = transform.position;
         Vector3 currentVelocity = rb.velocity;
-        rb.AddForce((-currentVelocity.x / 4)* wspolczynnik_sily, (-currentVelocity.y / 5) * wspolczynnik_sily, (-currentVelocity.z / 4) * wspolczynnik_sily);
+        rb.AddForce((-currentVelocity.x / 4) * wspolczynnik_sily, (-currentVelocity.y / 5) * wspolczynnik_sily, (-currentVelocity.z / 4) * wspolczynnik_sily);
         VelocityX = currentVelocity.x;
         VelocityY = currentVelocity.y;
         VelocityZ = currentVelocity.z;
@@ -212,15 +212,15 @@ public class AutoNPC : MonoBehaviour
             {
                 cel_z = meta_z + pas;
             }
-            if (currentPosition.x +100< meta_x)
+            if (currentPosition.x + 100 < meta_x)
             {
-                cel_x = currentPosition.x+100;
+                cel_x = currentPosition.x + 100;
             }
             else
             {
                 cel_x = meta_x;
             }
-            if (currentPosition.x > meta_x +100)
+            if (currentPosition.x > meta_x + 100)
             {
                 cel_x = currentPosition.x - 100;
             }
@@ -249,9 +249,9 @@ public class AutoNPC : MonoBehaviour
                 cel_z = currentPosition.z - 100;
             }
         }
-        float arcTanValue = Mathf.Atan2((cel_x- currentPosition.x), (cel_z - currentPosition.z));
-        pozycjaZ=currentPosition.z;
-        pozycjaX=currentPosition.x;
+        float arcTanValue = Mathf.Atan2((cel_x - currentPosition.x), (cel_z - currentPosition.z));
+        pozycjaZ = currentPosition.z;
+        pozycjaX = currentPosition.x;
         // Konwersja z radianów na stopnie
         kierunek_jazdy = Mathf.Rad2Deg * arcTanValue;
         Vector3 currentRotation = transform.rotation.eulerAngles;
@@ -325,7 +325,7 @@ public class AutoNPC : MonoBehaviour
             {
                 stan = 1;
             }
-            if (stan == 1 && koniec==0)
+            if (stan == 1 && koniec == 0)
             {
 
                 rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 14 * wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 5 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 14 * wspolczynnik_sily);
@@ -344,6 +344,6 @@ public class AutoNPC : MonoBehaviour
                 rb.AddTorque(Vector3.right * wspolczynnik_sily * -obrot);
             }
         }
-        
+
     }
 }
