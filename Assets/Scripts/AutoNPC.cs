@@ -34,22 +34,24 @@ public class AutoNPC : MonoBehaviour
     float wspolczynnik_sily = 1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
     //int[] wyscig1_Array = new int[] { 9, 11, 28, 27, 44 };
-    int[] wyscig1_Array = new int[] { 21, 20, 26, 25, 18, 17, 37, 41, 43, 32, 40, 38, 35 };
+    //int[] wyscig1_Array = new int[] { 21, 20, 26, 25, 18, 17, 37, 41, 43, 42, 40, 38, 35 };
+    //int[] wyscig1_Array = new int[] { 21, 2, 5, 16, 15, 28, 27, 32, 31, 20, 21 };
+    int[] wyscig1_Array = new int[] { 35, 38, 37, 0, 1, 7, 9, 2, 4, 28, 30, 16, 14, 21, 20 };
     void Start()
     {
-        pozycje_X[0] = -1550;
-        pozycje_Z[0] = 1390;
+        pozycje_X[0] = -1554;
+        pozycje_Z[0] = 1395;
         pozycje_X[1] = -1050;
-        pozycje_Z[1] = 1390;
+        pozycje_Z[1] = 1395;
         pozycje_X[2] = 115;
-        pozycje_Z[2] = 1390;
+        pozycje_Z[2] = 1395;
         pozycje_X[3] = 538;
-        pozycje_Z[3] = 1390;
+        pozycje_Z[3] = 1395;
         pozycje_X[4] = 955;
-        pozycje_Z[4] = 1390;
+        pozycje_Z[4] = 1395;
         pozycje_X[5] = 1514;
-        pozycje_Z[5] = 1390;
-        pozycje_X[6] = -1550;
+        pozycje_Z[5] = 1395;
+        pozycje_X[6] = -1554;
         pozycje_Z[6] = 825;
         pozycje_X[7] = -1050;
         pozycje_Z[7] = 825;
@@ -71,7 +73,7 @@ public class AutoNPC : MonoBehaviour
         pozycje_Z[15] = 507;
         pozycje_X[16] = 1514;
         pozycje_Z[16] = 507;
-        pozycje_X[17] = -1550;
+        pozycje_X[17] = -1554;
         pozycje_Z[17] = 272;
         pozycje_X[18] = -1173;
         pozycje_Z[18] = 272;
@@ -81,7 +83,7 @@ public class AutoNPC : MonoBehaviour
         pozycje_Z[20] = 272;
         pozycje_X[21] = 115;
         pozycje_Z[21] = 272;
-        pozycje_X[22] = -1550;
+        pozycje_X[22] = -1554;
         pozycje_Z[22] = 68;
         pozycje_X[23] = -1173;
         pozycje_Z[23] = 68;
@@ -111,7 +113,7 @@ public class AutoNPC : MonoBehaviour
         pozycje_Z[35] = -2574;
         pozycje_X[36] = 30;
         pozycje_Z[36] = -2574;
-        pozycje_X[37] = -1550;
+        pozycje_X[37] = -1554;
         pozycje_Z[37] = -2893;
         pozycje_X[38] = -520;
         pozycje_Z[38] = -2893;
