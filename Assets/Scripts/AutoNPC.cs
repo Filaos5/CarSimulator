@@ -16,8 +16,8 @@ public class AutoNPC : MonoBehaviour
     float obrot = 1;
     private float[] floatArray_X = new float[5]; // Tablica float o d³ugoœci 5
     private float[] floatArray_Z = new float[5]; // Tablica float o d³ugoœci 5
-    private float[] pozycje_X = new float[44]; // Tablica float o d³ugoœci 5
-    private float[] pozycje_Z = new float[44]; // Tablica float o d³ugoœci 5
+    private float[] pozycje_X = new float[45]; // Tablica float o d³ugoœci 5
+    private float[] pozycje_Z = new float[45]; // Tablica float o d³ugoœci 5
     public int currentIndex = 0;
     public float VelocityX;
     public float VelocityY;
@@ -33,7 +33,8 @@ public class AutoNPC : MonoBehaviour
     public float pas = 5;
     float wspolczynnik_sily = 1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
-    int[] wyscig1_Array = new int[] { 9, 11, 28, 27, 44 };
+    //int[] wyscig1_Array = new int[] { 9, 11, 28, 27, 44 };
+    int[] wyscig1_Array = new int[] { 21, 20, 26, 25, 18, 17, 37, 41, 43, 32, 40, 38, 35 };
     void Start()
     {
         pozycje_X[0] = -1550;
