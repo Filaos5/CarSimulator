@@ -5,11 +5,14 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 
-public class Wyscig : MonoBehaviour
+public class Wyscig5 : MonoBehaviour
 {
     public GameObject samochod1;
     public GameObject samochod2;
     public GameObject samochod3;
+    public GameObject samochod4;
+    public GameObject samochod5;
+    public GameObject game_manager;
     public bool dotykaCar = false;
     public int stan_wyscig = 0;
     public Camera mainCamera;
@@ -39,6 +42,8 @@ public class Wyscig : MonoBehaviour
         {
             dotykaCar = true;
         }
+        GameManager gameManager = game_manager.GetComponent<GameManager>();
+        gameManager.numer_wyscigu = 5;
     }
 
     private void OnTriggerExit(Collider other)
@@ -107,18 +112,6 @@ public class Wyscig : MonoBehaviour
             stan_wyscig = 1;
             dotykaCar = false;
         }
-        /*
-        floatArray_X[0] = 120;
-        floatArray_X[1] = 960;
-        floatArray_X[2] = 960;
-        floatArray_X[3] = 120;
-        floatArray_X[4] = 120;
-        floatArray_Z[0] = 830;
-        floatArray_Z[1] = 830;
-        floatArray_Z[2] = -260;
-        floatArray_Z[3] = -260;
-        floatArray_Z[4] = -1400;
-        */
 
         if (dotykaCar == true && stan_wyscig == 1)
         {

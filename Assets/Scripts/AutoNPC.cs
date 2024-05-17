@@ -16,8 +16,8 @@ public class AutoNPC : MonoBehaviour
     float obrot = 1;
     private float[] floatArray_X = new float[5]; // Tablica float o d³ugoœci 5
     private float[] floatArray_Z = new float[5]; // Tablica float o d³ugoœci 5
-    private float[] pozycje_X = new float[45]; // Tablica float o d³ugoœci 5
-    private float[] pozycje_Z = new float[45]; // Tablica float o d³ugoœci 5
+    private float[] pozycje_X = new float[45]; // Tablica float
+    private float[] pozycje_Z = new float[45]; // Tablica float
     public int currentIndex = 0;
     public float VelocityX;
     public float VelocityY;
@@ -31,12 +31,15 @@ public class AutoNPC : MonoBehaviour
     public float roznica;
     public int koniec=0;
     public float pas = 5;
+    int numer_wyscig=0;
     float wspolczynnik_sily = 1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
-    //int[] wyscig1_Array = new int[] { 9, 11, 28, 27, 44 };
-    //int[] wyscig1_Array = new int[] { 21, 20, 26, 25, 18, 17, 37, 41, 43, 42, 40, 38, 35 };
-    //int[] wyscig1_Array = new int[] { 21, 2, 5, 16, 15, 28, 27, 32, 31, 20, 21 };
-    int[] wyscig1_Array = new int[] { 35, 38, 37, 0, 1, 7, 9, 2, 4, 28, 30, 16, 14, 21, 20 };
+    int[] wyscig_Array;
+    int[] wyscig1_Array = new int[] { 9, 11, 28, 27, 44 };
+    int[] wyscig2_Array = new int[] { 21, 20, 26, 25, 18, 17, 37, 41, 43, 42, 40, 38, 35 };
+    int[] wyscig3_Array = new int[] { 21, 2, 5, 16, 15, 28, 27, 32, 31, 20, 21 };
+    int[] wyscig4_Array = new int[] { 35, 38, 37, 0, 1, 7, 9, 2, 4, 28, 30, 16, 14, 21, 20 };
+    int[] wyscig5_Array = new int[] { 20, 31, 32, 21, 20};
     void Start()
     {
         pozycje_X[0] = -1554;
@@ -130,22 +133,34 @@ public class AutoNPC : MonoBehaviour
         pozycje_X[44] = 115;
         pozycje_Z[44] = -1400;
 
+        GameObject gameManagerObject = GameObject.Find("GameManager");
 
+        if (gameManagerObject != null)
+        {
+            // Pobierz komponent GameManager z obiektu gameManagerObject
+            GameManager gameManager = gameManagerObject.GetComponent<GameManager>();
+            numer_wyscig = gameManager.numer_wyscigu;
+        }
+        wyscig_Array = wyscig1_Array;
+        if (numer_wyscig == 2)
+        {
+            wyscig_Array = wyscig2_Array;
+        }
+        if (numer_wyscig == 3)
+        {
+            wyscig_Array = wyscig3_Array;
+        }
+        if (numer_wyscig == 4)
+        {
+            wyscig_Array = wyscig4_Array;
+        }
+        if (numer_wyscig == 5)
+        {
+            wyscig_Array = wyscig5_Array;
+        }
 
-        floatArray_X[0] = 120;
-        floatArray_X[1] = 960;
-        floatArray_X[2] = 960;
-        floatArray_X[3] = 120;
-        floatArray_X[4] = 120;
-        floatArray_Z[0] = 830;
-        floatArray_Z[1] = 830;
-        floatArray_Z[2] = -260;
-        floatArray_Z[3] = -260;
-        floatArray_Z[4] = -1400;
-
-
-        meta_x = pozycje_X[wyscig1_Array[0]];
-        meta_z = pozycje_Z[wyscig1_Array[0]];
+        meta_x = pozycje_X[wyscig_Array[0]];
+        meta_z = pozycje_Z[wyscig_Array[0]];
         //meta_x = floatArray_X[0];
         //meta_z = floatArray_Z[0];
         pas = 5;
@@ -311,12 +326,12 @@ public class AutoNPC : MonoBehaviour
             if ((Math.Abs(currentPosition.x - meta_x) + Math.Abs(currentPosition.z - meta_z)) < 60)
             {
                 currentIndex = currentIndex + 1;
-                if (currentIndex < wyscig1_Array.Length)
+                if (currentIndex < wyscig_Array.Length)
                 {
                     //meta_x = (float)floatArray_X[currentIndex];
                     //meta_z = (float)floatArray_Z[currentIndex];
-                    meta_x = (float)pozycje_X[wyscig1_Array[currentIndex]];
-                    meta_z = (float)pozycje_Z[wyscig1_Array[currentIndex]];
+                    meta_x = (float)pozycje_X[wyscig_Array[currentIndex]];
+                    meta_z = (float)pozycje_Z[wyscig_Array[currentIndex]];
                 }
                 else
                 {
