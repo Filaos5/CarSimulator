@@ -153,6 +153,7 @@ public class AutoNPC : MonoBehaviour
         if (numer_wyscig == 4)
         {
             wyscig_Array = wyscig4_Array;
+            pozycje_Z[35] = -2610;
         }
         if (numer_wyscig == 5)
         {

@@ -311,7 +311,7 @@ public class Wyscig2 : MonoBehaviour
             Destroy(sam3);
             Destroy(sam4);
             Destroy(sam5);
-            objectpole.SetActive(false);
+            objectpole.SetActive(true);
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
             StartCoroutine(meta());
