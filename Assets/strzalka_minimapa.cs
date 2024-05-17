@@ -19,7 +19,7 @@ public class strzalka_minimapa : MonoBehaviour
         {
             GameObject obiekt = GameObject.Find(nazwa_pojazdu);
             Jazda jazdao = obiekt.GetComponent<Jazda>();
-            minimap_kamera.orthographicSize = 120 + jazdao.speed;
+            minimap_kamera.orthographicSize = 120 + jazdao.speed * 1.2f;
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, -obiekt.transform.eulerAngles.y + minimap_kamera.transform.eulerAngles.y);
         }
         else
@@ -39,7 +39,7 @@ public class strzalka_minimapa : MonoBehaviour
         {
             GameObject obiekt = GameObject.Find(nazwa_pojazdu);
             Jazda jazdao = obiekt.GetComponent<Jazda>();
-            minimap_kamera.orthographicSize = 120 + jazdao.speed;
+            minimap_kamera.orthographicSize = 120 + jazdao.speed * 1.2f;
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, -obiekt.transform.eulerAngles.y + minimap_kamera.transform.eulerAngles.y);
         }
         else

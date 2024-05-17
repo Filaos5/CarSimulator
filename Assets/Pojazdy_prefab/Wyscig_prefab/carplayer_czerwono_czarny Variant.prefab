@@ -118,7 +118,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,
         type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 2556683019745475770}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8047727698847052242, guid: a4cd9543214af4c4db512b91e96db045,
@@ -168,6 +168,7 @@ MonoBehaviour:
   kierunek: 0
   roznica: 0
   koniec: 0
+  pas: 5
 --- !u!54 &6778870135712573652 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3052957643842374336, guid: a4cd9543214af4c4db512b91e96db045,
@@ -241,6 +242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229000548611209226, guid: 1c08d712be631e04f8d9985ba5ad4d41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

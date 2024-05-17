@@ -71,17 +71,17 @@ PrefabInstance:
     - target: {fileID: 8229000548611209226, guid: 1c08d712be631e04f8d9985ba5ad4d41,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.9490196
+      value: 0.41176474
       objectReference: {fileID: 0}
     - target: {fileID: 8229000548611209226, guid: 1c08d712be631e04f8d9985ba5ad4d41,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.26810703
+      value: 0.26666668
       objectReference: {fileID: 0}
     - target: {fileID: 8229000548611209226, guid: 1c08d712be631e04f8d9985ba5ad4d41,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.082352936
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -222,6 +222,7 @@ MonoBehaviour:
   kierunek: 0
   roznica: 0
   koniec: 0
+  pas: 5
 --- !u!4 &5612698055551740031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7270099631083219816, guid: a4cd9543214af4c4db512b91e96db045,

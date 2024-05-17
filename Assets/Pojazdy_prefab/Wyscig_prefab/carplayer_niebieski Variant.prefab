@@ -134,6 +134,7 @@ MonoBehaviour:
   kierunek: 0
   roznica: 0
   koniec: 0
+  pas: 5
 --- !u!1001 &6528460688298700920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,17 +206,17 @@ PrefabInstance:
     - target: {fileID: 8229000548611209226, guid: 1c08d712be631e04f8d9985ba5ad4d41,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.9490196
+      value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 8229000548611209226, guid: 1c08d712be631e04f8d9985ba5ad4d41,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.082352936
+      value: 0.13333334
       objectReference: {fileID: 0}
     - target: {fileID: 8229000548611209226, guid: 1c08d712be631e04f8d9985ba5ad4d41,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.80343884
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
