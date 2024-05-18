@@ -9,6 +9,7 @@ TagManager:
   - Samolot1
   - Samolot2
   - Camera_mapa
+  - Znacznik
   layers:
   - Default
   - TransparentFX

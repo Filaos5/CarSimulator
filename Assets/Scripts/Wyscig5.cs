@@ -10,8 +10,6 @@ public class Wyscig5 : MonoBehaviour
     public GameObject samochod1;
     public GameObject samochod2;
     public GameObject samochod3;
-    public GameObject samochod4;
-    public GameObject samochod5;
     public GameObject game_manager;
     public bool dotykaCar = false;
     public int stan_wyscig = 0;
@@ -28,29 +26,31 @@ public class Wyscig5 : MonoBehaviour
     private float czasRozpoczecia;
     private float czasPrzejazdu;
     // Start is called before the first frame update
-    private float[] pozycje_X = new float[45]; // Tablica float
-    private float[] pozycje_Z = new float[45]; // Tablica float
+    private float[] pozycje_X = new float[47]; // Tablica float
+    private float[] pozycje_Z = new float[47]; // Tablica float
     private void OnTriggerEnter(Collider other)
     {
         GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
         Kamera kamera = mainCameraObject.GetComponent<Kamera>();
+        GameManager gameManager = game_manager.GetComponent<GameManager>();
         nazwa_samochodu = kamera.nazwa_samochodu;
-        if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0)
+        if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0 && gameManager.wyscig_stan == 0)
         {
             textMeshPro.gameObject.SetActive(true);
             textMeshPro.text = "Aby rozpocz¹æ wyœcig wciœnij E";
         }
-        if (other.gameObject.name == nazwa_samochodu)
+        if (other.gameObject.name == nazwa_samochodu && gameManager.wyscig_stan == 0)
         {
             dotykaCar = true;
         }
-        GameManager gameManager = game_manager.GetComponent<GameManager>();
+
         gameManager.numer_wyscigu = 5;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == nazwa_samochodu)
+        GameManager gameManager = game_manager.GetComponent<GameManager>();
+        if (other.gameObject.name == nazwa_samochodu && gameManager.wyscig_stan == 0)
         {
             dotykaCar = false;
             textMeshPro.gameObject.SetActive(false);
@@ -151,6 +151,10 @@ public class Wyscig5 : MonoBehaviour
         pozycje_Z[43] = -3338;
         pozycje_X[44] = 115;
         pozycje_Z[44] = -1400;
+        pozycje_X[45] = 115;
+        pozycje_Z[45] = -679;
+        pozycje_X[46] = 670;
+        pozycje_Z[46] = -679;
     }
     IEnumerator odliczanie()
     {
@@ -163,9 +167,9 @@ public class Wyscig5 : MonoBehaviour
         textMeshPro.text = "1";
         yield return new WaitForSecondsRealtime(1f);
         textMeshPro.text = "START!";
+        yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1f;
         czasRozpoczecia = Time.time;
-        yield return new WaitForSecondsRealtime(3f);
         textMeshPro.gameObject.SetActive(false);
     }
 
@@ -190,63 +194,105 @@ public class Wyscig5 : MonoBehaviour
             GameObject obj = GameObject.Find(nazwa_samochodu);
             // Ustaw rotacjê obiektu na 0
             obj.transform.rotation = Quaternion.identity;
-            sam1 = Instantiate(samochod1, new Vector3(120f, 0f, -1350f), Quaternion.identity);
-            sam2 = Instantiate(samochod2, new Vector3(130f, 0f, -1360f), Quaternion.identity);
-            sam3 = Instantiate(samochod3, new Vector3(110f, 0f, -1370f), Quaternion.identity);
+            sam1 = Instantiate(samochod1, new Vector3(-250f, 0f, 10f), Quaternion.identity);
+            sam2 = Instantiate(samochod2, new Vector3(-260f, 0f, 0f), Quaternion.identity);
+            sam3 = Instantiate(samochod3, new Vector3(-245f, 0f, -10f), Quaternion.identity);
             Rigidbody rb = obj.GetComponent<Rigidbody>();
             rb.velocity = Vector3.zero;
             StartCoroutine(odliczanie());
             objectpole.SetActive(false);
             objectstrzalka.SetActive(true);
             objectcylinder.SetActive(true);
-            objectToMove.position = new Vector3(120f, 0f, 830f);
-            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            objectToMove.position = new Vector3(-248f, 0f, 272f);
+            transform.rotation = Quaternion.Euler(0f, 270f, 0f);
             stan_wyscig = 1;
             dotykaCar = false;
+            czasRozpoczecia = Time.time;
+            //{ 20, 31, 32, 21, 18, 25, 27, 45, 46};
         }
-
         if (dotykaCar == true && stan_wyscig == 1)
         {
-            objectToMove.position = new Vector3(960f, 0f, 830f);
+            objectToMove.position = new Vector3(pozycje_X[20], 0f, pozycje_Z[20]);
             transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             stan_wyscig = 2;
             dotykaCar = false;
         }
         if (dotykaCar == true && stan_wyscig == 2)
         {
-            objectToMove.position = new Vector3(960f, 0f, -260f);
-            transform.rotation = Quaternion.Euler(0f, 270f, 0f);
+            objectToMove.position = new Vector3(pozycje_X[31], 20f, pozycje_Z[31]);
+            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
             stan_wyscig = 3;
             dotykaCar = false;
         }
         if (dotykaCar == true && stan_wyscig == 3)
         {
-            objectToMove.position = new Vector3(120f, 0f, -260f);
-            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            objectToMove.position = new Vector3(pozycje_X[32], 0f, pozycje_Z[32]);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             stan_wyscig = 4;
             dotykaCar = false;
         }
         if (dotykaCar == true && stan_wyscig == 4)
         {
-            objectToMove.position = new Vector3(120f, 0f, -1385f);
+            objectToMove.position = new Vector3(pozycje_X[21], 0f, pozycje_Z[21]);
+            transform.rotation = Quaternion.Euler(0f, 270f, 0f);
+            stan_wyscig = 5;
+            dotykaCar = false;
+        }
+        if (dotykaCar == true && stan_wyscig == 5)
+        {
+            objectToMove.position = new Vector3(pozycje_X[18], 0f, pozycje_Z[18]);
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            stan_wyscig = 6;
+            dotykaCar = false;
+        }
+        //{ 20, 31, 32, 21, 18, 25, 27, 45, 46};
+        if (dotykaCar == true && stan_wyscig == 6)
+        {
+            objectToMove.position = new Vector3(pozycje_X[25], 0f, pozycje_Z[25]);
+            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            stan_wyscig = 7;
+            dotykaCar = false;
+        }
+        if (dotykaCar == true && stan_wyscig == 7)
+        {
+            objectToMove.position = new Vector3(pozycje_X[27], 0f, pozycje_Z[27]);
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            stan_wyscig = 8;
+            dotykaCar = false;
+        }
+        if (dotykaCar == true && stan_wyscig == 8)
+        {
+            objectToMove.position = new Vector3(pozycje_X[45], 0f, pozycje_Z[45]);
+            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            stan_wyscig = 9;
+            dotykaCar = false;
+        }
+        if (dotykaCar == true && stan_wyscig == 9)
+        {
+            objectToMove.position = new Vector3(pozycje_X[46], 0f, pozycje_Z[46]);
             //transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             objectstrzalka.SetActive(false);
             objectpole.SetActive(true);
-            stan_wyscig = 5;
+            stan_wyscig = 10;
             dotykaCar = false; 
         }
-        if (dotykaCar == true && stan_wyscig == 5)
+        if (dotykaCar == true && stan_wyscig == 10)
         {   
             //GameObject obiektDoZniszczenia = GameObject.Find(samochod1);
             //Destroy(obiektDoZniszczenia);
             Destroy(sam1);
             Destroy(sam2);
             Destroy(sam3);
-            objectpole.SetActive(false);
+            objectpole.SetActive(true);
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
-            StartCoroutine(meta());
             stan_wyscig = 0;
+            GameManager gameManager = game_manager.GetComponent<GameManager>();
+            gameManager.wyscig_stan = 4;
+            textMeshPro.gameObject.SetActive(true);
+            // Wpisz tekst "jestem" do TextMeshPro
+            textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
+            objectToMove.position = new Vector3(-248f, 0f, 0f);
         }
         
     }

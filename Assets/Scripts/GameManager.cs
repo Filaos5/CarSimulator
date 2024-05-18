@@ -14,8 +14,10 @@ public class GameManager : MonoBehaviour
     public Camera mainCamera; // Przypisz kamerê "mania camera" w edytorze Unity
     public Camera kameraMapa;
     public int numer_wyscigu;
+    public int wyscig_stan;
     public int mapa;
     public int mapa_p;
+    public TextMeshProUGUI textMeshPro;
     void Awake()
     {
 
@@ -37,6 +39,35 @@ public class GameManager : MonoBehaviour
             kameraMapa.enabled = true;
             UIMiniMapa.SetActive(false);
         }
+    }
+    IEnumerator odliczanie()
+    {
+        Time.timeScale = 0f;
+        textMeshPro.gameObject.SetActive(true);
+        textMeshPro.text = "3";
+        yield return new WaitForSecondsRealtime(1f);
+        textMeshPro.text = "2";
+        yield return new WaitForSecondsRealtime(1f);
+        textMeshPro.text = "1";
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 1f;
+        wyscig_stan = 2;
+        textMeshPro.text = "START!";
+        yield return new WaitForSecondsRealtime(1f);
+        textMeshPro.gameObject.SetActive(false);
+        //StartCoroutine(start());
+        //textMeshPro.text = "START!";
+        //yield return new WaitForSecondsRealtime(10f);
+        //yield return new WaitForSecondsRealtime(1f);
+        //textMeshPro.gameObject.SetActive(false);
+    }
+    IEnumerator start()
+    {
+        textMeshPro.gameObject.SetActive(true);
+        //yield return new WaitForSecondsRealtime(3f);
+        textMeshPro.text = "START!";
+        yield return new WaitForSecondsRealtime(2f);
+        textMeshPro.gameObject.SetActive(false);
     }
     // Wy³¹cz rzucanie cieni dla wszystkich innych œwiate³ kierunkowych
     IEnumerator mapa_k()
@@ -69,7 +100,50 @@ public class GameManager : MonoBehaviour
             mainCamera.enabled = true;
         }
         */
-        if(Time.timeScale == 0.02f)
+
+        if (wyscig_stan == 1)
+        {
+            GameObject[] objectsToHide = GameObject.FindGameObjectsWithTag("Znacznik");
+
+            // Przeiteruj przez wszystkie znalezione obiekty
+            foreach (GameObject obj in objectsToHide)
+            {
+                Renderer objRenderer = obj.GetComponent<Renderer>();
+                if (objRenderer != null)
+                {
+                    // Ustaw obiekt na niewidoczny
+                    objRenderer.enabled = false;
+                }
+            }
+            StartCoroutine(odliczanie());
+            //StartCoroutine(start());
+            wyscig_stan = 2;
+
+        }
+        if (wyscig_stan == 2)
+        {
+            
+            wyscig_stan = 3;
+            //StartCoroutine(start());
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && wyscig_stan == 4)
+        {
+            textMeshPro.gameObject.SetActive(false);
+            wyscig_stan = 0;
+            GameObject[] objectsToHide = GameObject.FindGameObjectsWithTag("Znacznik");
+
+            // Przeiteruj przez wszystkie znalezione obiekty
+            foreach (GameObject obj in objectsToHide)
+            {
+                Renderer objRenderer = obj.GetComponent<Renderer>();
+                if (objRenderer != null)
+                {
+                    // Ustaw obiekt na niewidoczny
+                    objRenderer.enabled = true;
+                }
+            }
+        }
+        if (Time.timeScale == 0.02f)
         {
             mainCamera.enabled = true;
             kameraMapa.enabled = false;

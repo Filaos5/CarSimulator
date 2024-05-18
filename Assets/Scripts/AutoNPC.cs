@@ -16,8 +16,8 @@ public class AutoNPC : MonoBehaviour
     float obrot = 1;
     private float[] floatArray_X = new float[5]; // Tablica float o d³ugoœci 5
     private float[] floatArray_Z = new float[5]; // Tablica float o d³ugoœci 5
-    private float[] pozycje_X = new float[45]; // Tablica float
-    private float[] pozycje_Z = new float[45]; // Tablica float
+    private float[] pozycje_X = new float[48]; // Tablica float
+    private float[] pozycje_Z = new float[48]; // Tablica float
     public int currentIndex = 0;
     public float VelocityX;
     public float VelocityY;
@@ -39,7 +39,7 @@ public class AutoNPC : MonoBehaviour
     int[] wyscig2_Array = new int[] { 21, 20, 26, 25, 18, 17, 37, 41, 43, 42, 40, 38, 35 };
     int[] wyscig3_Array = new int[] { 21, 2, 5, 16, 15, 28, 27, 32, 31, 20, 21 };
     int[] wyscig4_Array = new int[] { 35, 38, 37, 0, 1, 7, 9, 2, 4, 28, 30, 16, 14, 21, 20 };
-    int[] wyscig5_Array = new int[] { 20, 31, 32, 21, 20};
+    int[] wyscig5_Array = new int[] { 47, 20, 31, 32, 21, 18, 25, 27, 45, 46};
     void Start()
     {
         pozycje_X[0] = -1554;
@@ -132,6 +132,12 @@ public class AutoNPC : MonoBehaviour
         pozycje_Z[43] = -3338;
         pozycje_X[44] = 115;
         pozycje_Z[44] = -1400;
+        pozycje_X[45] = 115;
+        pozycje_Z[45] = -679;
+        pozycje_X[46] = 670;
+        pozycje_Z[46] = -679;
+        pozycje_X[47] = -248;
+        pozycje_Z[47] = 272;
 
         GameObject gameManagerObject = GameObject.Find("GameManager");
 

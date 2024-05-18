@@ -34,23 +34,25 @@ public class Wyscig4 : MonoBehaviour
     {
         GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
         Kamera kamera = mainCameraObject.GetComponent<Kamera>();
+        GameManager gameManager = game_manager.GetComponent<GameManager>();
         nazwa_samochodu = kamera.nazwa_samochodu;
-        if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0)
+        if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0 && gameManager.wyscig_stan == 0)
         {
             textMeshPro.gameObject.SetActive(true);
             textMeshPro.text = "Aby rozpocz¹æ wyœcig wciœnij E";
         }
-        if (other.gameObject.name == nazwa_samochodu)
+        if (other.gameObject.name == nazwa_samochodu && gameManager.wyscig_stan == 0)
         {
             dotykaCar = true;
         }
-        GameManager gameManager = game_manager.GetComponent<GameManager>();
+
         gameManager.numer_wyscigu = 4;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == nazwa_samochodu)
+        GameManager gameManager = game_manager.GetComponent<GameManager>();
+        if (other.gameObject.name == nazwa_samochodu && gameManager.wyscig_stan == 0)
         {
             dotykaCar = false;
             textMeshPro.gameObject.SetActive(false);
@@ -163,9 +165,9 @@ public class Wyscig4 : MonoBehaviour
         textMeshPro.text = "1";
         yield return new WaitForSecondsRealtime(1f);
         textMeshPro.text = "START!";
+        yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1f;
         czasRozpoczecia = Time.time;
-        yield return new WaitForSecondsRealtime(3f);
         textMeshPro.gameObject.SetActive(false);
     }
 
@@ -208,6 +210,7 @@ public class Wyscig4 : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             stan_wyscig = 1;
             dotykaCar = false;
+            czasRozpoczecia = Time.time;
             //{ 35, 38, 37, 0, 1, 7, 9, 2, 4, 28, 30, 16, 14, 21, 20 };
         }
         if (dotykaCar == true && stan_wyscig == 1)
@@ -320,8 +323,12 @@ public class Wyscig4 : MonoBehaviour
             objectpole.SetActive(true);
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
-            StartCoroutine(meta());
             stan_wyscig = 0;
+            GameManager gameManager = game_manager.GetComponent<GameManager>();
+            gameManager.wyscig_stan = 4;
+            textMeshPro.gameObject.SetActive(true);
+            // Wpisz tekst "jestem" do TextMeshPro
+            textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
             objectToMove.position = new Vector3(-1070f, 0f, -2610f);
         }
 

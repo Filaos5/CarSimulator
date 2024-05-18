@@ -28,13 +28,13 @@ public class Wyscig1 : MonoBehaviour
     private float[] pozycje_X = new float[45]; // Tablica float
     private float[] pozycje_Z = new float[45]; // Tablica float
     // Start is called before the first frame update
-
     private void OnTriggerEnter(Collider other)
     {
         GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
         Kamera kamera = mainCameraObject.GetComponent<Kamera>();
+        GameManager gameManager = game_manager.GetComponent<GameManager>();
         nazwa_samochodu = kamera.nazwa_samochodu;
-        if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0)
+        if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0 && gameManager.wyscig_stan==0)
         {
             textMeshPro.gameObject.SetActive(true);
             textMeshPro.text = "Aby rozpocz¹æ wyœcig wciœnij E";
@@ -43,13 +43,14 @@ public class Wyscig1 : MonoBehaviour
         {
             dotykaCar = true;
         }
-        GameManager gameManager = game_manager.GetComponent<GameManager>();
+        
         gameManager.numer_wyscigu = 1;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == nazwa_samochodu)
+        GameManager gameManager = game_manager.GetComponent<GameManager>();
+        if (other.gameObject.name == nazwa_samochodu && gameManager.wyscig_stan == 0)
         {
             dotykaCar = false;
             textMeshPro.gameObject.SetActive(false);
@@ -60,6 +61,7 @@ public class Wyscig1 : MonoBehaviour
         objectstrzalka.SetActive(false);
         objectcylinder.SetActive(false);
         textMeshPro.gameObject.SetActive(false);
+        
     }
     IEnumerator odliczanie()
     {
@@ -73,12 +75,13 @@ public class Wyscig1 : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         textMeshPro.text = "START!";
         Time.timeScale = 1f;
+        yield return new WaitForSecondsRealtime(1f);
+        //Time.timeScale = 1f;
         czasRozpoczecia = Time.time;
-        yield return new WaitForSecondsRealtime(3f);
         textMeshPro.gameObject.SetActive(false);
     }
 
-    IEnumerator meta()
+        IEnumerator meta()
     {
         textMeshPro.gameObject.SetActive(true);
         // Wpisz tekst "jestem" do TextMeshPro
@@ -89,29 +92,35 @@ public class Wyscig1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.E) && dotykaCar == true && stan_wyscig==0)
         {
+            GameManager gameManager = game_manager.GetComponent<GameManager>();
+            if (gameManager.wyscig_stan == 0)
+            {
+                gameManager.wyscig_stan = 1;
+                GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
+                Kamera kamera = mainCameraObject.GetComponent<Kamera>();
+                nazwa_samochodu = kamera.nazwa_samochodu;
+                GameObject obj = GameObject.Find(nazwa_samochodu);
+                // Ustaw rotacjê obiektu na 0
+                obj.transform.rotation = Quaternion.identity;
+                sam1 = Instantiate(samochod1, new Vector3(120f, 0f, -1350f), Quaternion.identity);
+                sam2 = Instantiate(samochod2, new Vector3(130f, 0f, -1360f), Quaternion.identity);
+                sam3 = Instantiate(samochod3, new Vector3(110f, 0f, -1370f), Quaternion.identity);
+                Rigidbody rb = obj.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+                //StartCoroutine(odliczanie());
+                objectpole.SetActive(false);
+                objectstrzalka.SetActive(true);
+                objectcylinder.SetActive(true);
+                objectToMove.position = new Vector3(120f, 0f, 830f);
+                transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                stan_wyscig = 1;
+                dotykaCar = false;
+                czasRozpoczecia = Time.time;
+            }
             
-            GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
-            Kamera kamera = mainCameraObject.GetComponent<Kamera>();
-            nazwa_samochodu = kamera.nazwa_samochodu;
-            GameObject obj = GameObject.Find(nazwa_samochodu);
-            // Ustaw rotacjê obiektu na 0
-            obj.transform.rotation = Quaternion.identity;
-            sam1 = Instantiate(samochod1, new Vector3(120f, 0f, -1350f), Quaternion.identity);
-            sam2 = Instantiate(samochod2, new Vector3(130f, 0f, -1360f), Quaternion.identity);
-            sam3 = Instantiate(samochod3, new Vector3(110f, 0f, -1370f), Quaternion.identity);
-            Rigidbody rb = obj.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
-            StartCoroutine(odliczanie());
-            objectpole.SetActive(false);
-            objectstrzalka.SetActive(true);
-            objectcylinder.SetActive(true);
-            objectToMove.position = new Vector3(120f, 0f, 830f);
-            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-            stan_wyscig = 1;
-            dotykaCar = false;
+            
         }
 
         if (dotykaCar == true && stan_wyscig == 1)
@@ -151,11 +160,16 @@ public class Wyscig1 : MonoBehaviour
             Destroy(sam1);
             Destroy(sam2);
             Destroy(sam3);
-            objectpole.SetActive(false);
+            objectpole.SetActive(true);
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
-            StartCoroutine(meta());
+            //StartCoroutine(meta());
             stan_wyscig = 0;
+            GameManager gameManager = game_manager.GetComponent<GameManager>();
+            gameManager.wyscig_stan = 4;
+            textMeshPro.gameObject.SetActive(true);
+            // Wpisz tekst "jestem" do TextMeshPro
+            textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
         }
         
     }
