@@ -333,6 +333,7 @@ public class Kamera : MonoBehaviour
             if (obiekt_rodzaj == 1)
             {
                 GameObject targetObject1 = GameObject.Find(nazwa_samochodu);
+                //targetObject1.chil
                 transform.position = targetObject1.transform.position + myVector;
                 pozycja_pojazdu = targetObject1.transform.position;
                 transform.LookAt(targetObject1.transform.position);
