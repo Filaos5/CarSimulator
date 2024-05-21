@@ -27,6 +27,7 @@ public class Wyscig1 : MonoBehaviour
     private float czasPrzejazdu;
     private float[] pozycje_X = new float[45]; // Tablica float
     private float[] pozycje_Z = new float[45]; // Tablica float
+    private GameObject[] obiektyPoziomu;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -56,12 +57,31 @@ public class Wyscig1 : MonoBehaviour
             textMeshPro.gameObject.SetActive(false);
         }
     }
+
+    private void PokazPoziom()
+    {
+        //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
+        foreach (GameObject obiekt in obiektyPoziomu)
+        {
+            obiekt.SetActive(true);
+        }
+    }
+    private void UkryjPoziom()
+    {
+        //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
+        foreach (GameObject obiekt in obiektyPoziomu)
+        {
+            obiekt.SetActive(false);
+        }
+    }
     void Start()
     {
         objectstrzalka.SetActive(false);
         objectcylinder.SetActive(false);
         textMeshPro.gameObject.SetActive(false);
-        
+        obiektyPoziomu = GameObject.FindGameObjectsWithTag("Level1");
+        UkryjPoziom();
+
     }
     IEnumerator odliczanie()
     {
@@ -89,6 +109,7 @@ public class Wyscig1 : MonoBehaviour
         yield return new WaitForSecondsRealtime(3f);
         textMeshPro.gameObject.SetActive(false);
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -118,6 +139,7 @@ public class Wyscig1 : MonoBehaviour
                 stan_wyscig = 1;
                 dotykaCar = false;
                 czasRozpoczecia = Time.time;
+                PokazPoziom();
             }
             
             
@@ -170,6 +192,7 @@ public class Wyscig1 : MonoBehaviour
             textMeshPro.gameObject.SetActive(true);
             // Wpisz tekst "jestem" do TextMeshPro
             textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
+            UkryjPoziom();
         }
         
     }
