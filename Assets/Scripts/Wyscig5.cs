@@ -29,6 +29,7 @@ public class Wyscig5 : MonoBehaviour
     private float[] pozycje_X = new float[47]; // Tablica float
     private float[] pozycje_Z = new float[47]; // Tablica float
     private GameObject[] obiektyPoziomu;
+    private GameObject[] obiektyZnaczniki;
     private void OnTriggerEnter(Collider other)
     {
         GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
@@ -58,18 +59,18 @@ public class Wyscig5 : MonoBehaviour
         }
     }
 
-    private void PokazPoziom()
+    private void PokazPoziom(GameObject[] obiektyPoziom)
     {
         //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
-        foreach (GameObject obiekt in obiektyPoziomu)
+        foreach (GameObject obiekt in obiektyPoziom)
         {
             obiekt.SetActive(true);
         }
     }
-    private void UkryjPoziom()
+    private void UkryjPoziom(GameObject[] obiektyPoziom)
     {
         //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
-        foreach (GameObject obiekt in obiektyPoziomu)
+        foreach (GameObject obiekt in obiektyPoziom)
         {
             obiekt.SetActive(false);
         }
@@ -80,7 +81,8 @@ public class Wyscig5 : MonoBehaviour
         objectcylinder.SetActive(false);
         textMeshPro.gameObject.SetActive(false);
         obiektyPoziomu = GameObject.FindGameObjectsWithTag("Level5");
-        UkryjPoziom();
+        obiektyZnaczniki = GameObject.FindGameObjectsWithTag("Znacznik");
+        UkryjPoziom(obiektyPoziomu);
         pozycje_X[0] = -1554;
         pozycje_Z[0] = 1395;
         pozycje_X[1] = -1050;
@@ -220,7 +222,7 @@ public class Wyscig5 : MonoBehaviour
             Rigidbody rb = obj.GetComponent<Rigidbody>();
             rb.velocity = Vector3.zero;
             StartCoroutine(odliczanie());
-            objectpole.SetActive(false);
+            //objectpole.SetActive(false);
             objectstrzalka.SetActive(true);
             objectcylinder.SetActive(true);
             objectToMove.position = new Vector3(-248f, 0f, 272f);
@@ -228,7 +230,8 @@ public class Wyscig5 : MonoBehaviour
             stan_wyscig = 1;
             dotykaCar = false;
             czasRozpoczecia = Time.time;
-            PokazPoziom();
+            PokazPoziom(obiektyPoziomu);
+            UkryjPoziom(obiektyZnaczniki);
             //{ 20, 31, 32, 21, 18, 25, 27, 45, 46};
         }
         if (dotykaCar == true && stan_wyscig == 1)
@@ -293,7 +296,7 @@ public class Wyscig5 : MonoBehaviour
             objectToMove.position = new Vector3(pozycje_X[46], 0f, pozycje_Z[46]);
             //transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             objectstrzalka.SetActive(false);
-            objectpole.SetActive(true);
+            //objectpole.SetActive(true);
             stan_wyscig = 10;
             dotykaCar = false; 
         }
@@ -304,7 +307,7 @@ public class Wyscig5 : MonoBehaviour
             Destroy(sam1);
             Destroy(sam2);
             Destroy(sam3);
-            objectpole.SetActive(true);
+            //objectpole.SetActive(true);
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
             stan_wyscig = 0;
@@ -314,7 +317,8 @@ public class Wyscig5 : MonoBehaviour
             // Wpisz tekst "jestem" do TextMeshPro
             textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
             objectToMove.position = new Vector3(-248f, 0f, 0f);
-            UkryjPoziom();
+            UkryjPoziom(obiektyPoziomu);
+            PokazPoziom(obiektyZnaczniki);
         }
         
     }

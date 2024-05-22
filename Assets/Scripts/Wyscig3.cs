@@ -31,6 +31,7 @@ public class Wyscig3 : MonoBehaviour
     private GameObject[] obiektyPoziomu;
     private GameObject[] obiektyPoziomuP;
     private GameObject[] obiektyPoziomuK;
+    private GameObject[] obiektyZnaczniki;
     private void OnTriggerEnter(Collider other)
     {
         GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
@@ -84,6 +85,7 @@ public class Wyscig3 : MonoBehaviour
         obiektyPoziomu = GameObject.FindGameObjectsWithTag("Level3");
         obiektyPoziomuP = GameObject.FindGameObjectsWithTag("Level3P");
         obiektyPoziomuK = GameObject.FindGameObjectsWithTag("Level3K");
+        obiektyZnaczniki = GameObject.FindGameObjectsWithTag("Znacznik");
         UkryjPoziom(obiektyPoziomu);
         pozycje_X[0] = -1554;
         pozycje_Z[0] = 1395;
@@ -223,7 +225,7 @@ public class Wyscig3 : MonoBehaviour
             Rigidbody rb = obj.GetComponent<Rigidbody>();
             rb.velocity = Vector3.zero;
             StartCoroutine(odliczanie());
-            objectpole.SetActive(false);
+            //objectpole.SetActive(false);
             objectstrzalka.SetActive(true);
             objectcylinder.SetActive(true);
             objectToMove.position = new Vector3(pozycje_X[21], 0f, pozycje_Z[21]);
@@ -233,6 +235,7 @@ public class Wyscig3 : MonoBehaviour
             czasRozpoczecia = Time.time;
             PokazPoziom(obiektyPoziomu);
             UkryjPoziom(obiektyPoziomuK);
+            UkryjPoziom(obiektyZnaczniki);
             //{ 21, 2, 5, 16, 15, 28, 27, 32, 31, 20, 21 };
         }
         if (dotykaCar == true && stan_wyscig == 1)
@@ -314,7 +317,7 @@ public class Wyscig3 : MonoBehaviour
             Destroy(sam1);
             Destroy(sam2);
             Destroy(sam3);
-            objectpole.SetActive(true);
+            //objectpole.SetActive(true);
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
             stan_wyscig = 0;
@@ -325,6 +328,7 @@ public class Wyscig3 : MonoBehaviour
             textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
             objectToMove.position = new Vector3(-204f, 0f, 246f);
             UkryjPoziom(obiektyPoziomu);
+            PokazPoziom(obiektyZnaczniki);
         }
 
     }
