@@ -28,6 +28,7 @@ public class Wyscig5 : MonoBehaviour
     // Start is called before the first frame update
     private float[] pozycje_X = new float[47]; // Tablica float
     private float[] pozycje_Z = new float[47]; // Tablica float
+    private GameObject[] obiektyPoziomu;
     private void OnTriggerEnter(Collider other)
     {
         GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
@@ -56,11 +57,30 @@ public class Wyscig5 : MonoBehaviour
             textMeshPro.gameObject.SetActive(false);
         }
     }
+
+    private void PokazPoziom()
+    {
+        //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
+        foreach (GameObject obiekt in obiektyPoziomu)
+        {
+            obiekt.SetActive(true);
+        }
+    }
+    private void UkryjPoziom()
+    {
+        //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
+        foreach (GameObject obiekt in obiektyPoziomu)
+        {
+            obiekt.SetActive(false);
+        }
+    }
     void Start()
     {
         objectstrzalka.SetActive(false);
         objectcylinder.SetActive(false);
         textMeshPro.gameObject.SetActive(false);
+        obiektyPoziomu = GameObject.FindGameObjectsWithTag("Level5");
+        UkryjPoziom();
         pozycje_X[0] = -1554;
         pozycje_Z[0] = 1395;
         pozycje_X[1] = -1050;
@@ -208,6 +228,7 @@ public class Wyscig5 : MonoBehaviour
             stan_wyscig = 1;
             dotykaCar = false;
             czasRozpoczecia = Time.time;
+            PokazPoziom();
             //{ 20, 31, 32, 21, 18, 25, 27, 45, 46};
         }
         if (dotykaCar == true && stan_wyscig == 1)
@@ -293,6 +314,7 @@ public class Wyscig5 : MonoBehaviour
             // Wpisz tekst "jestem" do TextMeshPro
             textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
             objectToMove.position = new Vector3(-248f, 0f, 0f);
+            UkryjPoziom();
         }
         
     }
