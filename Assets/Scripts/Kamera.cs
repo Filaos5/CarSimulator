@@ -47,8 +47,9 @@ public class Kamera : MonoBehaviour
     {
         QualitySettings.vSyncCount = 1;
         Application.targetFrameRate = 60;
-        GameObject targetObject = Instantiate(postac_gracza, new Vector3(100f, 0f, -1350f), Quaternion.identity);
+        //GameObject targetObject = Instantiate(postac_gracza, new Vector3(100f, 0f, -1350f), Quaternion.identity);
         //GameObject targetObject = Instantiate(postac_gracza, new Vector3(-350f, 0f, -3250f), Quaternion.identity);
+        GameObject targetObject = Instantiate(postac_gracza, new Vector3(-490f, 0f, -2520f), Quaternion.identity);
         targetObject.name = "postac_gracza";
         // GameObject targetObject = GameObject.Find("postac_gracza");
         //transform.position = targetObject.transform.position + myVector;
@@ -199,9 +200,9 @@ public class Kamera : MonoBehaviour
                 targetObject.name = "postac_gracza";
                 obiekt_rodzaj = 0;
                 time = 0;
-                currentRotation = helikopter_aktualny_transform.rotation.eulerAngles;
+                currentRotation = samolot_aktualny_transform.rotation.eulerAngles;
                 rotationY = currentRotation.y;
-                pozycja_postaci = pozycja_pojazdu + new Vector3(-(float)Math.Cos((rotationY) / (180 / Math.PI)) * 6, 0f, (float)Math.Sin((rotationY) / (180 / Math.PI)) * 6);
+                pozycja_postaci = pozycja_pojazdu + new Vector3(-(float)Math.Cos((rotationY) / (180 / Math.PI)) * 10, 0f, (float)Math.Sin((rotationY) / (180 / Math.PI)) * 10);
                 //transform.position = postac_gracza.transform.position + myVector;
 
                 targetObject.transform.position = pozycja_postaci;

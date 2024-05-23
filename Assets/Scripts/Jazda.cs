@@ -161,7 +161,7 @@ public class Jazda : MonoBehaviour
                 if (stan==1) //&& (currentRotation.x > -80 && currentRotation.x < 80)) (rotacjaZ > 110) && (rotacjaZ < 250) && 
                 {
                     //rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 10 * wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 5 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 10 * wspolczynnik_sily);
-                    if (Input.GetKey(KeyCode.W))
+                    if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
                     {
                         rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 17 * wspolczynnik_sily, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 12 * wspolczynnik_sily, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 17 * wspolczynnik_sily);
                         //x = (float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 150;
@@ -170,7 +170,7 @@ public class Jazda : MonoBehaviour
                         //rb.AddForce(0, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * przyspieszenie, 0);
 
                     }
-                    if (Input.GetKey(KeyCode.S))
+                    if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
                     {
                         rb.AddForce(-((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 15 * wspolczynnik_sily), (float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 2 * wspolczynnik_sily, -((float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 15 * wspolczynnik_sily));
                         // x = -(float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 26;
@@ -178,7 +178,7 @@ public class Jazda : MonoBehaviour
                         //z = -(float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 26;
                     }
 
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                     {
                         if (przod_tyl == 0)
                         {
@@ -187,12 +187,12 @@ public class Jazda : MonoBehaviour
                         }
                         else
                         {
-                            rb.AddForce(((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily), 0, ((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily));
+                            rb.AddForce(-((float)Math.Sin((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily), 0, -((float)Math.Cos((currentRotation.y - 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily));
                             transform.Rotate(Vector3.up * (-1f));
                         }
 
                     }
-                    if (Input.GetKey(KeyCode.A))
+                    if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
                     {
                         if (przod_tyl == 0)
                         {
@@ -202,7 +202,7 @@ public class Jazda : MonoBehaviour
                         }
                         else
                         {
-                            rb.AddForce(((float)Math.Sin((currentRotation.y + 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily), 0, ((float)Math.Cos((currentRotation.y + 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily));
+                            rb.AddForce(-((float)Math.Sin((currentRotation.y + 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily), 0, -((float)Math.Cos((currentRotation.y + 90) / (180 / Math.PI)) * (speed / (float)1.4) * wspolczynnik_sily));
                             transform.Rotate(Vector3.up * 1f);
                         }
 

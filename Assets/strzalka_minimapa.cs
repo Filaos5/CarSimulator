@@ -35,7 +35,7 @@ public class strzalka_minimapa : MonoBehaviour
         Kamera kamera_o = kamera.GetComponent<Kamera>();
         nazwa_pojazdu = kamera_o.nazwa_aktualnego_pojazdu;
         rodzaj_pojazdu = kamera_o.obiekt_rodzaj;
-        if (rodzaj_pojazdu > 0)
+        if (rodzaj_pojazdu == 1)
         {
             GameObject obiekt = GameObject.Find(nazwa_pojazdu);
             Jazda jazdao = obiekt.GetComponent<Jazda>();
