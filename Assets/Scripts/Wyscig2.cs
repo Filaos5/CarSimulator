@@ -32,6 +32,8 @@ public class Wyscig2 : MonoBehaviour
     // Start is called before the first frame update
     private float[] pozycje_X = new float[45]; // Tablica float
     private float[] pozycje_Z = new float[45]; // Tablica float
+    private GameObject[] obiektyPoziomu;
+    private GameObject[] obiektyZnaczniki;
     private void OnTriggerEnter(Collider other)
     {
         GameObject mainCameraObject = GameObject.FindWithTag("MainCamera");
@@ -60,11 +62,31 @@ public class Wyscig2 : MonoBehaviour
             textMeshPro.gameObject.SetActive(false);
         }
     }
+
+    private void PokazPoziom(GameObject[] obiektyPoziom)
+    {
+        //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
+        foreach (GameObject obiekt in obiektyPoziom)
+        {
+            obiekt.SetActive(true);
+        }
+    }
+    private void UkryjPoziom(GameObject[] obiektyPoziom)
+    {
+        //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
+        foreach (GameObject obiekt in obiektyPoziom)
+        {
+            obiekt.SetActive(false);
+        }
+    }
     void Start()
     {
         objectstrzalka.SetActive(false);
         objectcylinder.SetActive(false);
         textMeshPro.gameObject.SetActive(false);
+        obiektyPoziomu = GameObject.FindGameObjectsWithTag("Level2");
+        obiektyZnaczniki = GameObject.FindGameObjectsWithTag("Znacznik");
+        UkryjPoziom(obiektyPoziomu);
         pozycje_X[0] = -1554;
         pozycje_Z[0] = 1395;
         pozycje_X[1] = -1050;
@@ -210,7 +232,7 @@ public class Wyscig2 : MonoBehaviour
             //currentPosition.x = currentPosition.x + 30;
             //rb.position = currentPosition;
             StartCoroutine(odliczanie());
-            objectpole.SetActive(false);
+            //objectpole.SetActive(false);
             objectstrzalka.SetActive(true);
             objectcylinder.SetActive(true);
             objectToMove.position = new Vector3(pozycje_X[21], 0f, pozycje_Z[21]);
@@ -218,6 +240,8 @@ public class Wyscig2 : MonoBehaviour
             stan_wyscig = 1;
             dotykaCar = false;
             czasRozpoczecia = Time.time;
+            PokazPoziom(obiektyPoziomu);
+            UkryjPoziom(obiektyZnaczniki);
             //{ 21, 20, 26, 25, 18, 17, 37, 41, 43, 42, 40, 38, 35 };
         }
 
@@ -303,7 +327,7 @@ public class Wyscig2 : MonoBehaviour
         {
             objectToMove.position = new Vector3(pozycje_X[35], 0f, pozycje_Z[35]);
             objectstrzalka.SetActive(false);
-            objectpole.SetActive(true);
+            //objectpole.SetActive(true);
             stan_wyscig = 13;
             dotykaCar = false;
         }
@@ -314,7 +338,7 @@ public class Wyscig2 : MonoBehaviour
             Destroy(sam3);
             Destroy(sam4);
             Destroy(sam5);
-            objectpole.SetActive(true);
+            //objectpole.SetActive(true);
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
             stan_wyscig = 0;
@@ -324,6 +348,8 @@ public class Wyscig2 : MonoBehaviour
             // Wpisz tekst "jestem" do TextMeshPro
             textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
             objectToMove.position = new Vector3(155f, 0f, -54f);
+            UkryjPoziom(obiektyPoziomu);
+            PokazPoziom(obiektyZnaczniki);
         }
         
     }

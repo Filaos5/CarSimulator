@@ -28,6 +28,7 @@ public class Wyscig1 : MonoBehaviour
     private float[] pozycje_X = new float[45]; // Tablica float
     private float[] pozycje_Z = new float[45]; // Tablica float
     private GameObject[] obiektyPoziomu;
+    private GameObject[] obiektyZnaczniki;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -58,18 +59,18 @@ public class Wyscig1 : MonoBehaviour
         }
     }
 
-    private void PokazPoziom()
+    private void PokazPoziom(GameObject[] obiektyPoziom)
     {
         //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
-        foreach (GameObject obiekt in obiektyPoziomu)
+        foreach (GameObject obiekt in obiektyPoziom)
         {
             obiekt.SetActive(true);
         }
     }
-    private void UkryjPoziom()
+    private void UkryjPoziom(GameObject[] obiektyPoziom)
     {
         //GameObject[] obiektyPoziomu = GameObject.FindGameObjectsWithTag(tagPoziomu);
-        foreach (GameObject obiekt in obiektyPoziomu)
+        foreach (GameObject obiekt in obiektyPoziom)
         {
             obiekt.SetActive(false);
         }
@@ -80,7 +81,8 @@ public class Wyscig1 : MonoBehaviour
         objectcylinder.SetActive(false);
         textMeshPro.gameObject.SetActive(false);
         obiektyPoziomu = GameObject.FindGameObjectsWithTag("Level1");
-        UkryjPoziom();
+        obiektyZnaczniki = GameObject.FindGameObjectsWithTag("Znacznik");
+        UkryjPoziom(obiektyPoziomu);
 
     }
     IEnumerator odliczanie()
@@ -131,7 +133,7 @@ public class Wyscig1 : MonoBehaviour
                 Rigidbody rb = obj.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
                 //StartCoroutine(odliczanie());
-                objectpole.SetActive(false);
+                //objectpole.SetActive(false);
                 objectstrzalka.SetActive(true);
                 objectcylinder.SetActive(true);
                 objectToMove.position = new Vector3(120f, 0f, 830f);
@@ -139,7 +141,8 @@ public class Wyscig1 : MonoBehaviour
                 stan_wyscig = 1;
                 dotykaCar = false;
                 czasRozpoczecia = Time.time;
-                PokazPoziom();
+                PokazPoziom(obiektyPoziomu);
+                UkryjPoziom(obiektyZnaczniki);
             }
             
             
@@ -171,7 +174,7 @@ public class Wyscig1 : MonoBehaviour
             objectToMove.position = new Vector3(120f, 0f, -1385f);
             //transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             objectstrzalka.SetActive(false);
-            objectpole.SetActive(true);
+            //objectpole.SetActive(true);
             stan_wyscig = 5;
             dotykaCar = false; 
         }
@@ -182,7 +185,7 @@ public class Wyscig1 : MonoBehaviour
             Destroy(sam1);
             Destroy(sam2);
             Destroy(sam3);
-            objectpole.SetActive(true);
+            //objectpole.SetActive(true);
             objectcylinder.SetActive(false);
             czasPrzejazdu = Time.time - czasRozpoczecia;
             //StartCoroutine(meta());
@@ -192,7 +195,8 @@ public class Wyscig1 : MonoBehaviour
             textMeshPro.gameObject.SetActive(true);
             // Wpisz tekst "jestem" do TextMeshPro
             textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
-            UkryjPoziom();
+            UkryjPoziom(obiektyPoziomu);
+            PokazPoziom(obiektyZnaczniki);
         }
         
     }
