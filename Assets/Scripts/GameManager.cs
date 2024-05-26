@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -18,9 +20,14 @@ public class GameManager : MonoBehaviour
     public int mapa;
     public int mapa_p;
     public TextMeshProUGUI textMeshPro;
+    public float shadowDistance = 1000.0f; // Ustaw po¿¹dan¹ odleg³oœæ cieni
+    //public Volume volume;  // Referencja do Volume w scenie
+
+    //private HDShadowSettings shadowSettings;
+
     void Awake()
     {
-
+  
     }
     void UsunScene()
     {
@@ -29,6 +36,16 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        /*
+        if (volume.profile.TryGet(out shadowSettings))
+        {
+            shadowSettings.maxShadowDistance.value = shadowDistance;
+        }
+        else
+        {
+            Debug.LogError("HDShadowSettings not found in Volume profile.");
+        }
+        */
         PlayerPrefs.SetInt("mapa", 0);
         if (Time.timeScale == 0f)
         {
@@ -39,6 +56,7 @@ public class GameManager : MonoBehaviour
             kameraMapa.enabled = true;
             UIMiniMapa.SetActive(false);
         }
+        
     }
     IEnumerator odliczanie()
     {
