@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2754.4124, g: 2886.7502, b: 4323.0786, a: 1}
+  m_IndirectSpecularColor: {r: 2470.5742, g: 2600.675, b: 4164.6313, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17646,7 +17646,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 638b987deaf0b364c9347a60fd0ed260,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 146.4
+      value: 147.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 638b987deaf0b364c9347a60fd0ed260,
         type: 3}
@@ -53911,7 +53911,6 @@ MonoBehaviour:
   mapa_p: 0
   textMeshPro: {fileID: 1317941236}
   shadowDistance: 1000
-  volume: {fileID: 432432460}
 --- !u!4 &1126536776
 Transform:
   m_ObjectHideFlags: 0
