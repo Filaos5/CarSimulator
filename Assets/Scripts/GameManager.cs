@@ -24,10 +24,13 @@ public class GameManager : MonoBehaviour
     //public Volume volume;  // Referencja do Volume w scenie
 
     //private HDShadowSettings shadowSettings;
+    private bool ResetCarIsPressed = false;
+    private float ResetCarTimePressed = 0.0f;
+    private float ResetCarRequiredHoldTime = 5.0f;
 
     void Awake()
     {
-  
+
     }
     void UsunScene()
     {
@@ -56,7 +59,7 @@ public class GameManager : MonoBehaviour
             kameraMapa.enabled = true;
             UIMiniMapa.SetActive(false);
         }
-        
+
     }
     IEnumerator odliczanie()
     {
@@ -140,7 +143,7 @@ public class GameManager : MonoBehaviour
         }
         if (wyscig_stan == 2)
         {
-            
+
             wyscig_stan = 3;
             //StartCoroutine(start());
         }
@@ -169,7 +172,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
             mapa_p = 0;
         }
-        if(Time.timeScale == 0.1f && menu==1)
+        if (Time.timeScale == 0.1f && menu == 1)
         {
             UIMiniMapa.SetActive(true);
             menu = 0;
@@ -200,7 +203,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             menu = 1;
         }
-        if (Input.GetKeyDown(KeyCode.M) && mapa==0)
+        if (Input.GetKeyDown(KeyCode.M) && mapa == 0)
         {
             // Wy³¹cz kamerê "mania camera"
             mainCamera.enabled = false;
@@ -224,6 +227,26 @@ public class GameManager : MonoBehaviour
             mapa_p = 0;
             UIMiniMapa.SetActive(true);
             StartCoroutine(mapa_w());
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetCarIsPressed = true;
+            ResetCarTimePressed = Time.time;
+        }
+        if (Input.GetKey(KeyCode.R) && ResetCarIsPressed)
+        {
+            if (Time.time - ResetCarTimePressed >= ResetCarRequiredHoldTime)
+            {
+                Kamera kamera_o = mainCamera.GetComponent<Kamera>();
+                string nazwa_pojazdu = kamera_o.nazwa_aktualnego_pojazdu;
+                int rodzaj_pojazdu = kamera_o.obiekt_rodzaj;
+                if (rodzaj_pojazdu == 1)
+                {
+                    GameObject obiekt = GameObject.Find(nazwa_pojazdu);
+                    obiekt.transform.rotation = Quaternion.Euler(obiekt.transform.eulerAngles.x, obiekt.transform.eulerAngles.y, 0);
+                }
+                ResetCarIsPressed = false;
+            }
         }
     }
 }
