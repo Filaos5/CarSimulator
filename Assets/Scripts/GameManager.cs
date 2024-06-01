@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,10 +13,12 @@ public class GameManager : MonoBehaviour
     //public GameObject prefabPostacGracza;
     // Start is called before the first frame update
     public GameObject UIMiniMapa;
+    public GameObject slonce;
     int menu;
     public Camera mainCamera; // Przypisz kamerê "mania camera" w edytorze Unity
     public Camera kameraMapa;
     public int numer_wyscigu;
+    public Quaternion originalRotation;
     public int wyscig_stan;
     public int mapa;
     public int mapa_p;
@@ -171,11 +174,13 @@ public class GameManager : MonoBehaviour
             UIMiniMapa.SetActive(true);
             Time.timeScale = 1f;
             mapa_p = 0;
+            slonce.transform.rotation = originalRotation;
         }
         if (Time.timeScale == 0.1f && menu == 1)
         {
             UIMiniMapa.SetActive(true);
             menu = 0;
+            slonce.transform.rotation = originalRotation;
         }
         if (Time.timeScale == 0.1f)
         {
@@ -184,7 +189,7 @@ public class GameManager : MonoBehaviour
             mainCamera.enabled = false;
             kameraMapa.enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale==1)
         {
             Light sunLight = GameObject.Find("Sun").GetComponent<Light>();
             UIMiniMapa.SetActive(false);
@@ -196,7 +201,9 @@ public class GameManager : MonoBehaviour
             }
             //SceneManager.LoadScene(0);
             SceneManager.LoadScene(2, LoadSceneMode.Additive);
-
+            Transform objTransform = slonce.GetComponent<Transform>();
+            originalRotation = objTransform.rotation;
+            slonce.transform.rotation = Quaternion.Euler(90, 80, 0);
             // Rozpocznij odliczanie czasu
             //Invoke("UsunScene", 3f);
             Cursor.visible = true;
@@ -213,6 +220,10 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             mapa_p = 1;
             UIMiniMapa.SetActive(false);
+            // Pobierz komponent Transform obiektu
+            Transform objTransform = slonce.GetComponent<Transform>();
+            originalRotation = objTransform.rotation;
+            slonce.transform.rotation = Quaternion.Euler(90, 80, 0);
             StartCoroutine(mapa_k());
 
         }
@@ -224,6 +235,7 @@ public class GameManager : MonoBehaviour
             // W³¹cz kamerê "kamera_mapa"
             kameraMapa.enabled = false;
             Time.timeScale = 1f;
+            slonce.transform.rotation = originalRotation;
             mapa_p = 0;
             UIMiniMapa.SetActive(true);
             StartCoroutine(mapa_w());
