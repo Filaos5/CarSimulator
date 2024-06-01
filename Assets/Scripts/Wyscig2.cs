@@ -43,7 +43,7 @@ public class Wyscig2 : MonoBehaviour
         if (other.gameObject.name == nazwa_samochodu && stan_wyscig == 0 && gameManager.wyscig_stan == 0)
         {
             textMeshPro.gameObject.SetActive(true);
-            textMeshPro.text = "Aby rozpocz¹æ wyœcig wciœnij E";
+            textMeshPro.text = "Aby rozpocz¹æ wyœcig   wciœnij E";
         }
         if (other.gameObject.name == nazwa_samochodu && gameManager.wyscig_stan == 0)
         {
@@ -346,7 +346,7 @@ public class Wyscig2 : MonoBehaviour
             gameManager.wyscig_stan = 4;
             textMeshPro.gameObject.SetActive(true);
             // Wpisz tekst "jestem" do TextMeshPro
-            textMeshPro.text = "Twój czas" + czasPrzejazdu + " sekund, SPACJA zakoñcz";
+            textMeshPro.text = "Twój czas: " + czasPrzejazdu + " sekund, SPACJA zakoñcz";
             objectToMove.position = new Vector3(155f, 0f, -54f);
             UkryjPoziom(obiektyPoziomu);
             PokazPoziom(obiektyZnaczniki);
