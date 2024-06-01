@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Kamera_mapy : MonoBehaviour
 {
-    public float scrollSpeed = 0.1f; // Prêdkoœæ zwiêkszania pozycji y
-    public GameObject objectToMove;
+    public float scrollSpeed = 1f; // Prêdkoœæ zwiêkszania pozycji y
+    public Camera objectToMove;
     public int windowWidth;
     public int windowHeight;
     float wysokosc;
@@ -27,20 +27,20 @@ public class Kamera_mapy : MonoBehaviour
         mouse_y = mousePosition.y;
         // Zwiêksz lub zmniejsz pozycjê y obiektu w zale¿noœci od kierunku skoku myszy
         Vector3 pozycja = transform.position;
-        wysokosc = objectToMove.transform.position.y;
-        if (wysokosc <= 2000)
+        wysokosc = objectToMove.orthographicSize;
+        if (wysokosc <= 100)
         {
-            wysokosc = 2001;
+            wysokosc = 101;
         }
-        if (wysokosc >= 20000)
+        if (wysokosc >= 8000)
         {
-            wysokosc = 19999;
+            wysokosc = 7999;
         }
-        if (wysokosc >= 2000 && wysokosc <= 20000)
+        if (wysokosc >= 100 && wysokosc <= 8000)
         {
             wysokosc -=  scroll * scrollSpeed * wysokosc;
         }
-        pozycja.y = wysokosc;
+        objectToMove.orthographicSize = wysokosc;
 
         
         // SprawdŸ szerokoœæ i wysokoœæ okna gry
@@ -50,43 +50,43 @@ public class Kamera_mapy : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
-                pozycja.z = pozycja.z + 20;
+                pozycja.z = pozycja.z + 20 + objectToMove.orthographicSize * 0.03f;
             }
             if (Input.GetMouseButton(0) && mouse_y > windowHeight/2)
             {
-                pozycja.z = pozycja.z + (mouse_y - windowHeight / 2)*(float)0.1;
+                pozycja.z = pozycja.z + (mouse_y - windowHeight / 2)*(float)0.1 + objectToMove.orthographicSize * 0.03f;
             }
         }
         if (pozycja.z > -8000)
         {
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
-                pozycja.z = pozycja.z - 20;
+                pozycja.z = pozycja.z - 20 - objectToMove.orthographicSize * 0.03f;
             }
             if (Input.GetMouseButton(0) && mouse_y < windowHeight / 2)
             {
-                pozycja.z = pozycja.z + (mouse_y - windowHeight / 2) * (float)0.1;
+                pozycja.z = pozycja.z + (mouse_y - windowHeight / 2) * (float)0.1 - objectToMove.orthographicSize * 0.03f;
             }
         }
         if (pozycja.x < 6000) {
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
-                pozycja.x = pozycja.x + 20;
+                pozycja.x = pozycja.x + 20 + objectToMove.orthographicSize * 0.03f;
             }
             if (Input.GetMouseButton(0) && mouse_x > windowWidth / 2)
             {
-                pozycja.x = pozycja.x + (mouse_x - windowWidth / 2) * (float)0.1;
+                pozycja.x = pozycja.x + (mouse_x - windowWidth / 2) * (float)0.1 + objectToMove.orthographicSize * 0.03f;
             }
         }
         if (pozycja.x > -16000)
         {
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
-                pozycja.x = pozycja.x - 20;
+                pozycja.x = pozycja.x - 20 - objectToMove.orthographicSize * 0.03f;
             }
             if (Input.GetMouseButton(0) && mouse_x < windowWidth / 2)
             {
-                pozycja.x = pozycja.x + (mouse_x - windowWidth / 2) * (float)0.1;
+                pozycja.x = pozycja.x + (mouse_x - windowWidth / 2) * (float)0.1 - objectToMove.orthographicSize * 0.03f;
             }
         }
         transform.position = pozycja;
