@@ -92654,6 +92654,11 @@ PrefabInstance:
       objectReference: {fileID: 1126536774}
     - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
         type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
+    - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
+        type: 3}
       propertyPath: minimap_kamera
       value: 
       objectReference: {fileID: 270182157}
@@ -105283,6 +105288,11 @@ PrefabInstance:
       objectReference: {fileID: 1126536774}
     - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
         type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
+    - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
+        type: 3}
       propertyPath: minimap_kamera
       value: 
       objectReference: {fileID: 270182157}
@@ -105777,6 +105787,11 @@ PrefabInstance:
       propertyPath: mapa
       value: 
       objectReference: {fileID: 1126536774}
+    - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
         type: 3}
       propertyPath: minimap_kamera
@@ -111218,6 +111233,11 @@ PrefabInstance:
       objectReference: {fileID: 1126536774}
     - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
         type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
+    - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
+        type: 3}
       propertyPath: minimap_kamera
       value: 
       objectReference: {fileID: 270182157}
@@ -112596,6 +112616,11 @@ PrefabInstance:
       propertyPath: mapa
       value: 
       objectReference: {fileID: 1126536774}
+    - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 162969282550581348, guid: e07a9ab543d556042a8cb10862bea352,
         type: 3}
       propertyPath: minimap_kamera
