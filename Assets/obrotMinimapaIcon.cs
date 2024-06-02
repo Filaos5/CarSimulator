@@ -7,6 +7,7 @@ public class obrotMinimapaIcon : MonoBehaviour
 {
     public Camera minimap_kamera;
     public GameObject mapa;
+    public Camera mapa_kamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class obrotMinimapaIcon : MonoBehaviour
         else
         {
             transform.localRotation = Quaternion.Euler(180.0f, 0.0f, 0.0f);
-            transform.localScale = new Vector3(24, 24, 12);
+            transform.localScale = new Vector3(16 + mapa_kamera.orthographicSize * 0.01f, 16 + mapa_kamera.orthographicSize * 0.01f, 8 + mapa_kamera.orthographicSize * 0.01f);
         }
     }
 }
