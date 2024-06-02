@@ -10,7 +10,7 @@ public class StrzalkaGracza : MonoBehaviour
     public int rodzaj_pojazdu;
     void Start()
     {
-        transform.position = kamera.transform.position;
+        transform.position = new Vector3(kamera.transform.position.x, kamera.transform.position.y + 110, kamera.transform.position.z);
         Kamera kamera_o = kamera.GetComponent<Kamera>();
         nazwa_pojazdu = kamera_o.nazwa_aktualnego_pojazdu;
         rodzaj_pojazdu = kamera_o.obiekt_rodzaj;
@@ -28,7 +28,7 @@ public class StrzalkaGracza : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = kamera.transform.position;
+        transform.position = new Vector3(kamera.transform.position.x, kamera.transform.position.y + 110, kamera.transform.position.z);
         Kamera kamera_o = kamera.GetComponent<Kamera>();
         nazwa_pojazdu = kamera_o.nazwa_aktualnego_pojazdu;
         rodzaj_pojazdu = kamera_o.obiekt_rodzaj;
