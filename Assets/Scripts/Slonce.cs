@@ -11,7 +11,7 @@ public class Slonce : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         //transform.Rotate(-0.1f * Time.timeScale, 0f, 0f);
         transform.Rotate(-0.02f * Time.timeScale, 0f, 0f);

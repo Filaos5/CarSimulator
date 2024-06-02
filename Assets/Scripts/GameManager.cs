@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject UIMiniMapa;
     public GameObject slonce;
-    int menu;
+    public int menu;
     public Camera mainCamera; // Przypisz kamerê "mania camera" w edytorze Unity
     public Camera kameraMapa;
     public int numer_wyscigu;
@@ -174,13 +174,14 @@ public class GameManager : MonoBehaviour
             UIMiniMapa.SetActive(true);
             Time.timeScale = 1f;
             mapa_p = 0;
+            menu = 0;
             slonce.transform.rotation = originalRotation;
         }
         if (Time.timeScale == 0.1f && menu == 1)
         {
             UIMiniMapa.SetActive(true);
             menu = 0;
-            slonce.transform.rotation = originalRotation;
+            //slonce.transform.rotation = originalRotation;
         }
         if (Time.timeScale == 0.1f)
         {
@@ -189,7 +190,7 @@ public class GameManager : MonoBehaviour
             mainCamera.enabled = false;
             kameraMapa.enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale==1)
+        if (Input.GetKeyDown(KeyCode.Escape) && menu==0)
         {
             Light sunLight = GameObject.Find("Sun").GetComponent<Light>();
             UIMiniMapa.SetActive(false);
@@ -202,8 +203,11 @@ public class GameManager : MonoBehaviour
             //SceneManager.LoadScene(0);
             SceneManager.LoadScene(2, LoadSceneMode.Additive);
             Transform objTransform = slonce.GetComponent<Transform>();
-            originalRotation = objTransform.rotation;
-            slonce.transform.rotation = Quaternion.Euler(90, 80, 0);
+            if (mapa == 0)
+            {
+                originalRotation = objTransform.rotation;
+                slonce.transform.rotation = Quaternion.Euler(90, 80, 0);
+            }
             // Rozpocznij odliczanie czasu
             //Invoke("UsunScene", 3f);
             Cursor.visible = true;

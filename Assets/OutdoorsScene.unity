@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -7024,7 +7024,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b2ce00c9093055f4b8e335e51b430f57,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 170445755}
   m_SourcePrefab: {fileID: 100100000, guid: b2ce00c9093055f4b8e335e51b430f57, type: 3}
 --- !u!4 &170445751 stripped
 Transform:
@@ -7038,6 +7042,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 170445750}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &170445755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170445752}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81183c7cd605d5e44a8072d47e590d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &176031271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33540,6 +33556,7 @@ MonoBehaviour:
   windowHeight: 0
   mouse_x: 0
   mouse_y: 0
+  gameManager: {fileID: 1126536775}
 --- !u!1 &810299408
 GameObject:
   m_ObjectHideFlags: 0
@@ -54311,6 +54328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIMiniMapa: {fileID: 88189691}
   slonce: {fileID: 157207112}
+  menu: 0
   mainCamera: {fileID: 1823688466}
   kameraMapa: {fileID: 808395999}
   numer_wyscigu: 0

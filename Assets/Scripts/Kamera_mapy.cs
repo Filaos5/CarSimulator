@@ -9,9 +9,11 @@ public class Kamera_mapy : MonoBehaviour
     public Camera objectToMove;
     public int windowWidth;
     public int windowHeight;
-    float wysokosc;
+    public float wysokosc;
     public float mouse_x;
     public float mouse_y;
+    public GameManager gameManager;
+    int menu = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,17 +30,27 @@ public class Kamera_mapy : MonoBehaviour
         // Zwiêksz lub zmniejsz pozycjê y obiektu w zale¿noœci od kierunku skoku myszy
         Vector3 pozycja = transform.position;
         wysokosc = objectToMove.orthographicSize;
-        if (wysokosc <= 100)
+        menu = gameManager.menu;
+        if (menu == 0)
+        {
+            
+            if (wysokosc <= 100)
+            {
+                wysokosc = 101;
+            }
+            if (wysokosc >= 8000)
+            {
+                wysokosc = 7999;
+            }
+            if (wysokosc >= 100 && wysokosc <= 8000)
+            {
+
+                wysokosc -= scroll * scrollSpeed * wysokosc;
+            }
+        }
+        if (menu == 1)
         {
             wysokosc = 101;
-        }
-        if (wysokosc >= 8000)
-        {
-            wysokosc = 7999;
-        }
-        if (wysokosc >= 100 && wysokosc <= 8000)
-        {
-            wysokosc -=  scroll * scrollSpeed * wysokosc;
         }
         objectToMove.orthographicSize = wysokosc;
 
