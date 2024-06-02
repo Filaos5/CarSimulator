@@ -212,6 +212,8 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.M) && mapa == 0)
         {
+            kameraMapa.transform.position = new Vector3(mainCamera.transform.position.x, kameraMapa.transform.position.y, mainCamera.transform.position.z);
+            kameraMapa.orthographicSize = 1000;
             // Wy³¹cz kamerê "mania camera"
             mainCamera.enabled = false;
             PlayerPrefs.SetInt("mapa", 0);
