@@ -12068,9 +12068,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -20436,9 +20446,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -21138,9 +21158,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -21434,9 +21464,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -23767,9 +23807,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -26111,9 +26161,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -26514,9 +26574,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -29690,9 +29760,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -32930,9 +33010,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -33053,9 +33143,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -70298,9 +70398,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -70997,9 +71107,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -71564,6 +71684,7 @@ MonoBehaviour:
   kamera: {fileID: 1823688464}
   nazwa_pojazdu: 
   rodzaj_pojazdu: 0
+  mapa_kamera: {fileID: 808395999}
 --- !u!4 &1307282164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7360901803124818787, guid: 7b67427a9fc3ee642bf6d03291231b6b,
@@ -74912,9 +75033,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -80864,9 +80995,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -82475,9 +82616,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -87872,9 +88023,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -107080,9 +107241,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -109272,9 +109443,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -111877,9 +112058,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
@@ -114389,9 +114580,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
+      propertyPath: mapa
+      value: 
+      objectReference: {fileID: 1126536774}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
       propertyPath: kamera
       value: 
       objectReference: {fileID: 1823688464}
+    - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
+        type: 3}
+      propertyPath: mapa_kamera
+      value: 
+      objectReference: {fileID: 808395999}
     - target: {fileID: 4288178592858898990, guid: 35194e9b48988bc4b904ef6698159ed0,
         type: 3}
       propertyPath: minimap_kamera
