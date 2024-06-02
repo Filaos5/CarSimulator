@@ -189,6 +189,13 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             mainCamera.enabled = false;
             kameraMapa.enabled = true;
+            mapa_p = 1;
+            Transform objTransform = slonce.GetComponent<Transform>();
+            if (mapa == 0)
+            {
+                originalRotation = objTransform.rotation;
+                slonce.transform.rotation = Quaternion.Euler(90, 80, 0);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Escape) && menu==0)
         {
