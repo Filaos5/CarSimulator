@@ -144,12 +144,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationComponent: {fileID: 0}
-  defaultAnimationClip: {fileID: 0}
-  alternateAnimationClip: {fileID: 0}
-  animacja1: {fileID: 0}
-  animacja2: {fileID: 0}
   nazwa_kamery: 
+  stan: 0
   obiekt: {fileID: 0}
+  nachylenie: 0
+  czyNaZiemi: 0
+  distanceToGround: 0
 --- !u!54 &8184187519000897604
 Rigidbody:
   m_ObjectHideFlags: 0

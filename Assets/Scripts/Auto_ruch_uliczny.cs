@@ -16,9 +16,10 @@ public class Auto_ruch_uliczny : MonoBehaviour
     float obrot = 1;
     private float[] floatArray_X = new float[5]; // Tablica float o d³ugoœci 5
     private float[] floatArray_Z = new float[5]; // Tablica float o d³ugoœci 5
-    private float[] pozycje_X = new float[44]; // Tablica float o d³ugoœci 5
-    private float[] pozycje_Z = new float[44]; // Tablica float o d³ugoœci 5
-    public int currentIndex = 0;
+    private float[] pozycje_X = new float[45]; // Tablica float o d³ugoœci 5
+    private float[] pozycje_Z = new float[45]; // Tablica float o d³ugoœci 5
+    public int currentIndex = 38;
+    public int poprzedniIndex = 0;
     public float VelocityX;
     public float VelocityY;
     public float VelocityZ;
@@ -31,9 +32,65 @@ public class Auto_ruch_uliczny : MonoBehaviour
     public float roznica;
     public int koniec = 0;
     public float pas = 5;
+    public int jestem = 0;
     float wspolczynnik_sily = 1000;
     bool isTouchingObject = false; // Flaga informuj¹ca o dotyku z obiektem
-    int[] wyscig1_Array = new int[] { 9, 11, 28, 27, 44 };
+                                   //int[] wyscig1_Array = new int[] { 9, 11, 28, 27, 44 };
+    List<List<int>> listaList = new List<List<int>>
+        {
+            new List<int> { 1, 6},
+            new List<int> { 0, 7, 2 },
+            new List<int> { 1, 9, 3 },
+            new List<int> { 2, 10, 4},
+            new List<int> { 3, 11, 5},
+
+            new List<int> { 4, 12 },
+            new List<int> { 0, 7, 17 },
+            new List<int> { 1, 6, 19, 8 },
+            new List<int> { 7, 13, 9},
+            new List<int> { 2, 8, 14, 10},
+
+            new List<int> { 3, 9, 11},
+            new List<int> { 4, 10, 15, 12 },
+            new List<int> { 5, 11, 16 },
+            new List<int> { 8, 20, 14},
+            new List<int> { 9, 13, 21, 15 },
+
+            new List<int> { 11, 14, 28, 16},
+            new List<int> { 12, 15, 30 },
+            new List<int> { 6, 22, 18 },
+            new List<int> { 17, 23, 19 },
+            new List<int> { 7, 18, 20 },
+
+            new List<int> { 13, 19, 24, 21},
+            new List<int> { 14, 20, 27 },
+            new List<int> { 17, 37, 23 },
+            new List<int> { 18, 22, 25, 24 },
+            new List<int> { 20, 23, 26 },
+
+            new List<int> { 23, 26 },
+            new List<int> { 24, 25, 31, 27 },
+            new List<int> { 21, 26, 32, 28 },
+            new List<int> { 15, 27, 29},
+            new List<int> { 28, 33, 30 },
+
+            new List<int> { 16, 29, 34},
+            new List<int> { 26, 32 },
+            new List<int> { 27, 31 },
+            new List<int> { 29, 34 },
+            new List<int> { 30, 33 },
+
+            new List<int> { 36, 38 },
+            new List<int> { 35, 39 },
+            new List<int> { 22, 38 },
+            new List<int> { 35, 37, 39 },
+            new List<int> { 36, 38, 40},
+
+            new List<int> { 39, 41, 42 },
+            new List<int> { 40, 43 },
+            new List<int> { 40, 43,},
+            new List<int> { 41, 42 }
+        };
     void Start()
     {
         pozycje_X[0] = -1554;
@@ -140,12 +197,13 @@ public class Auto_ruch_uliczny : MonoBehaviour
         floatArray_Z[3] = -260;
         floatArray_Z[4] = -1400;
 
-
-        meta_x = pozycje_X[wyscig1_Array[0]];
-        meta_z = pozycje_Z[wyscig1_Array[0]];
+        currentIndex = 35;
+        meta_x = pozycje_X[currentIndex];
+        meta_z = pozycje_Z[currentIndex];
         //meta_x = floatArray_X[0];
         //meta_z = floatArray_Z[0];
         pas = 5;
+ 
 
     }
     void OnTriggerEnter(Collider other)
@@ -307,6 +365,35 @@ public class Auto_ruch_uliczny : MonoBehaviour
             }
             if ((Math.Abs(currentPosition.x - meta_x) + Math.Abs(currentPosition.z - meta_z)) < 60)
             {
+                // Sprawdzenie czy druga lista istnieje i nie jest pusta
+                // Tworzenie instancji klasy Random
+                
+                //System.Random rand = new System.Random();
+                //jestem = 1;
+
+                static int GetRandomValueFromList(List<List<int>> listaList, int currentIndex, int poprzedniIndex)
+                {
+                    System.Random rand = new System.Random();
+                    int randomIndex = rand.Next(listaList[currentIndex].Count);
+                    int randomValue = listaList[currentIndex][randomIndex];
+                    if (randomValue == poprzedniIndex)
+                    {
+                        randomValue = GetRandomValueFromList(listaList, currentIndex, poprzedniIndex);
+                    }
+                    return randomValue;
+                }
+                int randomValue = GetRandomValueFromList(listaList, currentIndex, poprzedniIndex);
+                poprzedniIndex = currentIndex;
+                currentIndex = randomValue;
+                meta_x = (float)pozycje_X[currentIndex];
+                meta_z = (float)pozycje_Z[currentIndex];
+
+
+                // Wyœwietlanie wylosowanej wartoœci
+                //Console.WriteLine("Wylosowana wartoœæ z drugiej listy: " + randomValue);
+
+
+                /*
                 currentIndex = currentIndex + 1;
                 if (currentIndex < wyscig1_Array.Length)
                 {
@@ -319,6 +406,7 @@ public class Auto_ruch_uliczny : MonoBehaviour
                 {
                     koniec = 1;
                 }
+                */
             }
             //rb.AddForce((float)Math.Sin((currentRotation.y + 0) / (180 / Math.PI)) * 10, -(float)Math.Sin((currentRotation.x + 0) / (180 / Math.PI)) * 5, (float)Math.Cos((currentRotation.y + 0) / (180 / Math.PI)) * 10);
             if (rb.position.y < 0.2)

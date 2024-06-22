@@ -29,6 +29,7 @@ public class Jazda : MonoBehaviour
     public float rotacjaZ;
     public float rotacjaX;
     public float right = 0;
+    public float sinus=0;
     float poprzedniaPozycjax;
     float poprzedniaPozycjay;
     float poprzedniaPozycjaz;
@@ -218,6 +219,24 @@ public class Jazda : MonoBehaviour
                     }
                     if (Input.GetKey(KeyCode.D))
                     {
+                        //sinus = (float)Math.Sin(currentRotation.y);
+                        //transform.Rotate(Vector3.forward * -1f);
+                        Vector3 torqueVector = new Vector3(((float)Math.Sin((currentRotation.y) / (180 / Math.PI))), 0, ((float)Math.Cos((currentRotation.y) / (180 / Math.PI))));
+                        rb.AddTorque(torqueVector * wspolczynnik_sily * -obrot);
+                        //rb.AddTorque(Vector3.right * wspolczynnik_sily * -obrot);
+                        //rb.AddTorque(Vector3.)
+                    }
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        //transform.Rotate(Vector3.forward * 1f);
+                        Vector3 torqueVector = new Vector3(((float)Math.Sin((currentRotation.y) / (180 / Math.PI))), 0, ((float)Math.Cos((currentRotation.y) / (180 / Math.PI))));
+                        rb.AddTorque(torqueVector * wspolczynnik_sily * obrot);
+                        //rb.AddTorque(Vector3.right * wspolczynnik_sily * obrot);
+
+                    }
+                    /*
+                    if (Input.GetKey(KeyCode.D))
+                    {
                         if ((rotacjaX < 320) && (rotacjaX > 210) || (rotacjaX < 150) && (rotacjaX > 30))
                         {
                             rb.AddTorque(Vector3.forward * wspolczynnik_sily * -obrot);
@@ -243,6 +262,7 @@ public class Jazda : MonoBehaviour
                             right = 1;
                         }
                     }
+                    */
                 }
                 //if(speed<0.1 && currentRotation.x<-170 && currentRotation.x)
                 if (Input.GetKey(KeyCode.L))
