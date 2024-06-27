@@ -48,8 +48,8 @@ public class Kamera : MonoBehaviour
         QualitySettings.vSyncCount = 1;
         Application.targetFrameRate = 60;
         //GameObject targetObject = Instantiate(postac_gracza, new Vector3(100f, 0f, -1350f), Quaternion.identity);
-        //GameObject targetObject = Instantiate(postac_gracza, new Vector3(-350f, 0f, -3250f), Quaternion.identity);
-        GameObject targetObject = Instantiate(postac_gracza, new Vector3(-490f, 0f, -2520f), Quaternion.identity);
+        GameObject targetObject = Instantiate(postac_gracza, new Vector3(-350f, 0f, -3250f), Quaternion.identity);
+        //GameObject targetObject = Instantiate(postac_gracza, new Vector3(-490f, 0f, -2520f), Quaternion.identity);
         targetObject.name = "postac_gracza";
         // GameObject targetObject = GameObject.Find("postac_gracza");
         //transform.position = targetObject.transform.position + myVector;
@@ -215,7 +215,7 @@ public class Kamera : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         zmianax = zmianax + (mouseX) * 3;
-        zmianay = zmianay - (mouseY) * (float)0.1;
+        zmianay = zmianay - (mouseY) * (float)0.2;
         licznik_myszy = licznik_myszy + 1;
         if (pozycja_myszy_x != mouseX || pozycja_myszy_y != mouseY)
         {
@@ -227,13 +227,13 @@ public class Kamera : MonoBehaviour
         }
         //  }
 
-        if (zmianay < -2.9)
+        if (zmianay < -5)
         {
-            zmianay = (float)-2.9;
+            zmianay = (float)-5;
         }
-        if (zmianay > 4)
+        if (zmianay > 5)
         {
-            zmianay = 4;
+            zmianay = 5;
         }
         //Vector3 currentVelocity = carplayertransform_p.velocity;
        //GameObject obiekt_s = GameObject.Find(nazwa_aktualnego_pojazdu);
@@ -276,23 +276,23 @@ public class Kamera : MonoBehaviour
                 //* (float)Math.Cos(zmianay*20))
                 if (obiekt_rodzaj == 1)
                 {
-                    myVector = new Vector3((-10 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax) / (180 / Math.PI)), 3 + zmianay, (-10 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax) / (180 / Math.PI))); // dla auta
+                    myVector = new Vector3((-10 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax) / (180 / Math.PI)), 3 + zmianay*(float)1.5, (-10 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax) / (180 / Math.PI))); // dla auta
                 }
                 if (obiekt_rodzaj == 2)
                 {
-                    myVector = new Vector3((-15 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax +90) / (180 / Math.PI)), 4 + zmianay*2, (-15 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax +90) / (180 / Math.PI))); // dla auta
+                    myVector = new Vector3((-15 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax +90) / (180 / Math.PI)), 4 + zmianay*3, (-15 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax +90) / (180 / Math.PI))); // dla helikoptera
                 }
                 if (obiekt_rodzaj == 3)
                 {
-                    myVector = new Vector3((-20 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax) / (180 / Math.PI)), 5 + zmianay*2, (-20 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax) / (180 / Math.PI))); // dla auta
+                    myVector = new Vector3((-20 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax) / (180 / Math.PI)), 5 + zmianay*3, (-20 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax) / (180 / Math.PI))); // dla samolotu m
                 }
                 if (obiekt_rodzaj == 4)
                 {
-                    myVector = new Vector3((-50 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax) / (180 / Math.PI)), 10 + zmianay*3, (-50 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax) / (180 / Math.PI))); // dla samolotu
+                    myVector = new Vector3((-50 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax) / (180 / Math.PI)), 10 + zmianay*8, (-50 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax) / (180 / Math.PI))); // dla samolotu
                 }
                 if (obiekt_rodzaj == 5)
                 {
-                    myVector = new Vector3((-100 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax) / (180 / Math.PI)), 20 + zmianay*5, (-100 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax) / (180 / Math.PI))); // dla samolotu
+                    myVector = new Vector3((-100 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((rotationY + zmianax) / (180 / Math.PI)), 20 + zmianay*10, (-100 * (float)Math.Cos(zmianay / 4)) * (float)Math.Cos((rotationY + zmianax) / (180 / Math.PI))); // dla shipa
                 }
             }
             else
@@ -306,25 +306,26 @@ public class Kamera : MonoBehaviour
                 }
                 if (obiekt_rodzaj == 1)
                 {
-                    myVector = new Vector3((-10 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 3 + zmianay, (-10 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // dla auta
+                    myVector = new Vector3((-10 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 3 + zmianay * (float)1.5, (-10 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // dla auta
                 }
                 if (obiekt_rodzaj == 2)
                 {
-                    myVector = new Vector3((-15 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax +90) / (180 / Math.PI)), 4 + zmianay, (-15 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax +90) / (180 / Math.PI))); // dla auta
+                    myVector = new Vector3((-15 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax +90) / (180 / Math.PI)), 4 + zmianay*3, (-15 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax +90) / (180 / Math.PI))); // dla helikoptera
                 }
                 if (obiekt_rodzaj == 3)
                 {
-                    myVector = new Vector3((-20 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 5 + zmianay, (-20 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // dla auta
+                    myVector = new Vector3((-20 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 5 + zmianay*3, (-20 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // dla samolotu m
                 }
                 if (obiekt_rodzaj == 4)
                 {
-                    myVector = new Vector3((-50 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 10 + zmianay, (-50 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // dla samolotu
+                    myVector = new Vector3((-50 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 10 + zmianay*8, (-50 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // dla samolotu
                 }
             }
         }
             if (obiekt_rodzaj == 0)
             {
-                myVector = new Vector3((-3 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 2 + zmianay, (-3 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // pieszo
+                //myVector = new Vector3((-3 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 2 + zmianay, (-3 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // pieszo
+                myVector = new Vector3((-3 * (float)Math.Cos(zmianay / 4)) * (float)Math.Sin((zmianax) / (180 / Math.PI)), 2 + zmianay*(float)0.7, (-3 * (float)Math.Cos(zmianay / 3)) * (float)Math.Cos((zmianax) / (180 / Math.PI))); // pieszo
                 GameObject targetObject0 = GameObject.Find("postac_gracza");
                 transform.position = targetObject0.transform.position + myVector;
                 //transform.position = postac_gracza.transform.position + myVector;
